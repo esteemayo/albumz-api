@@ -4,6 +4,10 @@ require('colors');
 
 dotenv.config({ path: './config.env' });
 const app = require('./app');
+const connectDB = require('./config/db');
+
+// MongoDB connction
+connectDB();
 
 app.set('port', process.env.PORT || 9797);
 
