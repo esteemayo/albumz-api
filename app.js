@@ -2,6 +2,8 @@ const express = require('express');
 const morgan = require('morgan');
 
 // requiring routes
+const NotFoundError = require('./errors/notFound');
+const globalErrorHandler = require('./middlewares/errorHandler');
 
 const app = express();
 
@@ -21,5 +23,11 @@ app.use((req, res, next) => {
 // api routes
 app.use('/api/v1/albums', require('./routes/albums'));
 app.use('/api/v1/users', require('./routes/users'));
+
+app.all('*', (req, res, next) => {
+  next(NotFoundError(`Can't find ${req.originalUrl} on this server`));
+});
+
+app.use(globalErrorHandler);
 
 module.exports = app;
