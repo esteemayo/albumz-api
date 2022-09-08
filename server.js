@@ -2,6 +2,12 @@
 const dotenv = require('dotenv');
 require('colors');
 
+process.on('uncaughtException', (err) => {
+  console.log('UNCAUGHT EXCEPTION! 🔥 Shutting down...'.bgRed.bold);
+  console.log(err.name, err.message);
+  process.exit(1);
+});
+
 dotenv.config({ path: './config.env' });
 const app = require('./app');
 const connectDB = require('./config/db');
