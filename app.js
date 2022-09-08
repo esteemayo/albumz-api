@@ -25,7 +25,7 @@ app.use('/api/v1/albums', require('./routes/albums'));
 app.use('/api/v1/users', require('./routes/users'));
 
 app.all('*', (req, res, next) => {
-  next(NotFoundError(`Can't find ${req.originalUrl} on this server`));
+  next(new NotFoundError(`Can't find ${req.originalUrl} on this server`));
 });
 
 app.use(globalErrorHandler);
