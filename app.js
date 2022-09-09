@@ -28,6 +28,7 @@ app.use('/api/v1/albums', require('./routes/albums'));
 app.use('/api/v1/users', require('./routes/users'));
 app.use('/api/v1/auth', require('./routes/auth'));
 app.use('/api/v1/genre', require('./routes/genre'));
+app.use('/api/v1/reviews', require('./routes/reviews'));
 
 app.all('*', (req, res, next) => {
   next(new NotFoundError(`Can't find ${req.originalUrl} on this server`));
