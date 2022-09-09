@@ -41,6 +41,15 @@ const albumSchema = new mongoose.Schema(
         message: 'Album should have at least one tag',
       },
     },
+    user: {
+      type: mongoose.Types.ObjectId,
+      ref: 'User',
+      required: [true, 'An album must belong to a user'],
+    },
+    likes: {
+      type: [String],
+      default: [],
+    },
   },
   {
     timestamps: true,
