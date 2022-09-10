@@ -26,6 +26,12 @@ router.get(
   albumController.getAlbumBySlug
 );
 
+router.patch(
+  '/like-album/:id',
+  authMiddleware.protect,
+  albumController.likeAlbum
+);
+
 router
   .route('/')
   .get(albumController.getAllAlbums)
