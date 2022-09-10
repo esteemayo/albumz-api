@@ -6,6 +6,7 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
+const hpp = require('hpp');
 
 // requiring routes
 const NotFoundError = require('./errors/notFound');
@@ -53,6 +54,7 @@ app.use(mongoSanitize());
 app.use(xss());
 
 // prevent parameter pollution
+app.use(hpp());
 
 // compression middleware
 
