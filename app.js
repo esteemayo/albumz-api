@@ -5,6 +5,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const mongoSanitize = require('express-mongo-sanitize');
+const xss = require('xss-clean');
 
 // requiring routes
 const NotFoundError = require('./errors/notFound');
@@ -49,6 +50,7 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(mongoSanitize());
 
 // data sanitization against XSS
+app.use(xss());
 
 // prevent parameter pollution
 
