@@ -1,9 +1,12 @@
 const express = require('express');
 
+const reviewRouter = require('./reviews');
 const authMiddleware = require('../middlewares/authMiddleware');
 const albumController = require('../controllers/albumController');
 
 const router = express.Router();
+
+router.use('/:albumId/reviews', reviewRouter);
 
 router.get(
   '/user-albums',
