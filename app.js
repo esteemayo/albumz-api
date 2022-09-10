@@ -7,6 +7,7 @@ const rateLimit = require('express-rate-limit');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
+const compression = require('compression');
 
 // requiring routes
 const NotFoundError = require('./errors/notFound');
@@ -57,6 +58,7 @@ app.use(xss());
 app.use(hpp());
 
 // compression middleware
+app.use(compression());
 
 // test middleware
 app.use((req, res, next) => {
