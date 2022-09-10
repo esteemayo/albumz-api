@@ -73,6 +73,7 @@ app.use('/api/v1/auth', require('./routes/auth'));
 app.use('/api/v1/genres', require('./routes/genre'));
 app.use('/api/v1/reviews', require('./routes/reviews'));
 app.use('/api/v1/bookmarks', require('./routes/bookmarks'));
+app.use('/api/v1/histories', require('./routes/history'));
 
 app.all('*', (req, res, next) => {
   next(new NotFoundError(`Can't find ${req.originalUrl} on this server`));
