@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
+const mongoSanitize = require('express-mongo-sanitize');
 
 // requiring routes
 const NotFoundError = require('./errors/notFound');
@@ -45,6 +46,7 @@ app.use(express.urlencoded({ extended: true, limit: '30mb' }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
 // data sanitization against NoSQL query injection
+app.use(mongoSanitize());
 
 // data sanitization against XSS
 
