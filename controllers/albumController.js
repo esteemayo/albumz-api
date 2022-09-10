@@ -83,7 +83,7 @@ exports.searchAlbum = asyncHandler(async (req, res, next) => {});
 exports.getAlbumById = asyncHandler(async (req, res, next) => {
   const { id: albumId } = req.params;
 
-  const album = await Album.findById(albumId);
+  const album = await Album.findById(albumId).populate({ path: 'reviews' });
 
   if (!album) {
     return next(
@@ -92,7 +92,7 @@ exports.getAlbumById = asyncHandler(async (req, res, next) => {
   }
 
   if (
-    String(album.user) === String(req.user._id) ||
+    String(album.user._id) === String(req.user._id) ||
     req.user.role === 'admin'
   ) {
     return res.status(StatusCodes.OK).json({
@@ -109,7 +109,7 @@ exports.getAlbumById = asyncHandler(async (req, res, next) => {
 exports.getAlbumBySlug = asyncHandler(async (req, res, next) => {
   const { slug } = req.params;
 
-  const album = await Album.findOne({ slug });
+  const album = await Album.findOne({ slug }).populate({ path: 'reviews' });
 
   if (!album) {
     return next(
@@ -118,7 +118,7 @@ exports.getAlbumBySlug = asyncHandler(async (req, res, next) => {
   }
 
   if (
-    String(album.user) === String(req.user._id) ||
+    String(album.user._id) === String(req.user._id) ||
     req.user.role === 'admin'
   ) {
     return res.status(StatusCodes.OK).json({
@@ -157,7 +157,7 @@ exports.updateAlbum = asyncHandler(async (req, res, next) => {
   }
 
   if (
-    String(album.user) === String(req.user._id) ||
+    String(album.user._id) === String(req.user._id) ||
     req.user.role === 'admin'
   ) {
     const updatedAlbum = await Album.findByIdAndUpdate(
@@ -226,7 +226,7 @@ exports.deleteAlbum = asyncHandler(async (req, res, next) => {
   }
 
   if (
-    String(album.user) === String(req.user._id) ||
+    String(album.user._id) === String(req.user._id) ||
     req.user.role === 'admin'
   ) {
     await album.remove();
