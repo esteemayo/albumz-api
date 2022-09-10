@@ -1,3 +1,4 @@
+const slugify = require('slugify');
 const { StatusCodes } = require('http-status-codes');
 const asyncHandler = require('express-async-handler');
 
@@ -205,6 +206,8 @@ exports.updateAlbum = asyncHandler(async (req, res, next) => {
       new NotFoundError(`There is no album with the given ID ↔ ${albumId}`)
     );
   }
+
+  if (req.body.title) req.body.slug = slugify(req.body.title, { lower: true });
 
   if (
     String(album.user._id) === String(req.user._id) ||

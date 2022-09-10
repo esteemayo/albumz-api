@@ -1,3 +1,4 @@
+const slugify = require('slugify');
 const { StatusCodes } = require('http-status-codes');
 const asyncHandler = require('express-async-handler');
 
@@ -100,6 +101,8 @@ exports.updateGenre = asyncHandler(async (req, res, next) => {
       new NotFoundError(`There is no genre with the given ID ↔ ${genreId}`)
     );
   }
+
+  if (req.body.name) req.body.slug = slugify(req.body.name, { lower: true });
 
   if (
     String(genre.user) === String(req.user._id) ||
