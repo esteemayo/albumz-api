@@ -58,6 +58,12 @@ const albumSchema = new mongoose.Schema(
   }
 );
 
+albumSchema.virtual('reviews', {
+  ref: 'Review',
+  foreignField: 'album',
+  localField: '_id',
+});
+
 albumSchema.pre('save', async function (next) {
   if (!this.isModified('title')) return next();
   this.slug = slugify(this.title, { lower: true });
@@ -68,6 +74,15 @@ albumSchema.pre('save', async function (next) {
   if (albumWithSlug.length) {
     this.slug = `${this.slug}-${albumWithSlug.length + 1}`;
   }
+});
+
+albumSchema.pre(/^find/, function (next) {
+  this.populate({
+    path: 'user',
+    select: 'name username location avatar',
+  });
+
+  next();
 });
 
 const Album = mongoose.models.Album || mongoose.model('Album', albumSchema);
