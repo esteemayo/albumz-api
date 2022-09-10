@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Album = require('./Album');
 
 const reviewSchema = new mongoose.Schema(
   {
@@ -26,8 +27,12 @@ const reviewSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
   }
 );
+
+reviewSchema.index({ album: 1, user: 1 }, { unique: true });
 
 reviewSchema.pre(/^find/, function (next) {
   this.populate({
@@ -35,6 +40,48 @@ reviewSchema.pre(/^find/, function (next) {
     select: 'name username location avatar',
   });
 
+  next();
+});
+
+reviewSchema.statics.calcAvgRatings = async function (albumId) {
+  const stats = await this.aggregate([
+    {
+      $match: { album: albumId },
+    },
+    {
+      $group: {
+        _id: '$album',
+        nRating: { $sum: 1 },
+        avgRating: { $avg: '$rating' },
+      },
+    },
+  ]);
+
+  if (stats.length > 0) {
+    await Album.findByIdAndUpdate(albumId, {
+      ratingsQuantity: stats[0].nRating,
+      ratingsAverage: stats[0].avgRating,
+    });
+  } else {
+    await Album.findByIdAndUpdate(albumId, {
+      ratingsQuantity: 0,
+      ratingsAverage: 4.5,
+    });
+  }
+};
+
+reviewSchema.post('save', function () {
+  this.constructor.calcAvgRatings(this.album);
+});
+
+// for update and delete review
+reviewSchema.pre(/^findOneAnd/, async function (next) {
+  this.r = await this.clone().findOne();
+  next();
+});
+
+reviewSchema.post(/^findOneAnd/, async function (doc, next) {
+  await doc.constructor.calcAvgRatings(this.r.album);
   next();
 });
 
