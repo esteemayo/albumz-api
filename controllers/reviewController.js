@@ -7,7 +7,10 @@ const ForbiddenError = require('../errors/forbidden');
 const NotFoundError = require('../errors/notFound');
 
 exports.getReviews = asyncHandler(async (req, res, next) => {
-  const features = new APIFeatures(Review.find(), req.query)
+  let filter = {};
+  if (req.params.albumId) filter = { album: req.params.albumId };
+
+  const features = new APIFeatures(Review.find(filter), req.query)
     .filter()
     .sort()
     .limitFields()
@@ -42,7 +45,7 @@ exports.getReview = asyncHandler(async (req, res, next) => {
 
 exports.createReview = asyncHandler(async (req, res, next) => {
   if (!req.body.user) req.body.user = req.user._id;
-  if (!req.body.album) req.body.album = req.params.id;
+  if (!req.body.album) req.body.album = req.params.albumId;
 
   const review = await Review.create({ ...req.body });
 
@@ -66,7 +69,7 @@ exports.updateReview = asyncHandler(async (req, res, next) => {
   }
 
   if (
-    String(review.user) === String(req.user._id) ||
+    String(review.user._id) === String(req.user._id) ||
     req.user.role === 'admin'
   ) {
     const updatedReview = await Review.findByIdAndUpdate(
@@ -101,7 +104,7 @@ exports.deleteReview = asyncHandler(async (req, res, next) => {
   }
 
   if (
-    String(review.user) === String(req.user._id) ||
+    String(review.user._id) === String(req.user._id) ||
     req.user.role === 'admin'
   ) {
     await review.remove();
