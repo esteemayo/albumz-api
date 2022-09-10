@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
 
 // requiring routes
 const NotFoundError = require('./errors/notFound');
@@ -28,6 +29,13 @@ if (app.get('env') === 'development') {
 }
 
 // limit request from same api
+const limiter = rateLimit({
+  max: 100,
+  windowMs: 30 * 60 * 1000,
+  message: 'Too many requests from this IP, Please try again in 30 minutes!',
+});
+
+app.use('/api', limiter);
 
 // body Parser, reading data from body into req.body
 app.use(express.json({ limit: '30mb' }));
