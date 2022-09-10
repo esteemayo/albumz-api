@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
+const helmet = require('helmet');
 
 // requiring routes
 const NotFoundError = require('./errors/notFound');
@@ -19,6 +20,7 @@ app.use(cors());
 app.options('*', cors());
 
 // set security HTTP headers
+app.use(helmet());
 
 // development logging
 if (app.get('env') === 'development') {
