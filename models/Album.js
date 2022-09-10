@@ -32,6 +32,16 @@ const albumSchema = new mongoose.Schema(
       type: Number,
       required: [true, 'Please tell us your album number of tracks'],
     },
+    ratingsAverage: {
+      type: Number,
+      default: 4.5,
+      min: [1, 'Rating must be above 1.0'],
+      max: [5, 'Rating must be below 5.0'],
+    },
+    ratingsQuantity: {
+      type: Number,
+      default: 0,
+    },
     tags: {
       type: Array,
       validate: {
@@ -57,6 +67,15 @@ const albumSchema = new mongoose.Schema(
     toObject: { virtuals: true },
   }
 );
+
+albumSchema.index({
+  artist: 'text',
+  title: 'text',
+  genre: 'text',
+});
+
+albumSchema.index({ title: 1, artist: 1 });
+albumSchema.index({ genre: 1, slug: -1 });
 
 albumSchema.virtual('reviews', {
   ref: 'Review',
@@ -84,6 +103,23 @@ albumSchema.pre(/^find/, function (next) {
 
   next();
 });
+
+albumSchema.statics.getTagsList = function () {
+  return this.aggregate([
+    {
+      $unwind: '$tags',
+    },
+    {
+      $group: {
+        _id: '$tags',
+        count: { $sum: 1 },
+      },
+    },
+    {
+      $sort: { count: -1 },
+    },
+  ]);
+};
 
 const Album = mongoose.models.Album || mongoose.model('Album', albumSchema);
 
