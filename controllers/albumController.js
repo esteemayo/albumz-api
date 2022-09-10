@@ -76,9 +76,59 @@ exports.getUserAlbums = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.getAlbumsByTag = asyncHandler(async (req, res, next) => {});
+exports.getAlbumsByTag = asyncHandler(async (req, res, next) => {
+  const { tag } = req.params;
+  const tagQuery = tag || { $exists: true };
 
-exports.searchAlbum = asyncHandler(async (req, res, next) => {});
+  const tagPromise = Album.getTagsList();
+  const albumPromise = Album.find({ tags: tagQuery });
+
+  const [tags, albums] = await Promise.all([tagPromise, albumPromise]);
+
+  res.status(StatusCodes.OK).json({
+    status: 'success',
+    albums,
+    tags,
+  });
+});
+
+exports.getRelatedAlbums = asyncHandler(async (req, res, next) => {
+  const tags = req.body;
+
+  const albums = await Album.find({ tags: { $in: tags } });
+
+  res.status(StatusCodes.OK).json({
+    status: 'success',
+    albums,
+  });
+});
+
+exports.searchAlbum = asyncHandler(async (req, res, next) => {
+  const albums = await Album.find(
+    {
+      $text: {
+        $search: req.query.q,
+      },
+    },
+    {
+      score: {
+        $meta: 'textScore',
+      },
+    }
+  )
+    .sort({
+      score: {
+        $meta: 'textScore',
+      },
+    })
+    .limit(5);
+
+  res.status(StatusCodes.OK).json({
+    status: 'success',
+    nbHits: albums.length,
+    albums,
+  });
+});
 
 exports.getAlbumById = asyncHandler(async (req, res, next) => {
   const { id: albumId } = req.params;
