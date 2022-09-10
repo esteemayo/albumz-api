@@ -8,6 +8,12 @@ const router = express.Router();
 
 router.use('/:albumId/reviews', reviewRouter);
 
+router.get('/search', albumController.searchAlbum);
+
+router.post('/related-albums', albumController.getRelatedAlbums);
+
+router.get('/tags/:tag', albumController.getAlbumsByTag);
+
 router.get(
   '/user-albums',
   authMiddleware.protect,
