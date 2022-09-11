@@ -27,6 +27,23 @@ exports.getBookmarks = asyncHandler(async (req, res, next) => {
   });
 });
 
+exports.getAdminBookmarks = asyncHandler(async (req, res, next) => {
+  const features = new APIFeatures(Bookmark.find(), req.query)
+    .filter()
+    .sort()
+    .limitFields()
+    .paginate();
+
+  const bookmarks = await features.query;
+
+  res.status(StatusCodes.OK).json({
+    status: 'success',
+    requestedAt: req.requestTime,
+    nbHits: bookmarks.length,
+    bookmarks,
+  });
+});
+
 exports.getBookmark = asyncHandler(async (req, res, next) => {
   const {
     user: { _id: userId },
