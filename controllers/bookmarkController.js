@@ -30,23 +30,29 @@ exports.getBookmarks = asyncHandler(async (req, res, next) => {
 exports.getBookmark = asyncHandler(async (req, res, next) => {
   const {
     user: { _id: userId },
-    params: { albumId },
+    params: { id: bookmarkId },
   } = req;
 
-  const bookmark = await Bookmark.findById(albumId);
+  const bookmark = await Bookmark.findById(bookmarkId);
 
   if (!bookmark) {
     return next(
-      new NotFoundError(`There is no bookmark with the given ID ↔ ${albumId}`)
+      new NotFoundError(
+        `There is no bookmark with the given ID ↔ ${bookmarkId}`
+      )
     );
   }
 
   if (String(bookmark.user) === String(userId) || req.user.role === 'admin') {
-    res.status(StatusCodes.OK).json({
+    return res.status(StatusCodes.OK).json({
       status: 'success',
       bookmark,
     });
   }
+
+  return next(
+    new ForbiddenError('Not allowed! You do not have access to this bookmark')
+  );
 });
 
 exports.getOneBookmark = asyncHandler(async (req, res, next) => {
@@ -132,7 +138,7 @@ exports.updateBookmark = asyncHandler(async (req, res, next) => {
   }
 
   return next(
-    new ForbiddenError('Not allowed! This bookmark does not belong to you')
+    new ForbiddenError('Not allowed! You do not have access to this bookmark')
   );
 });
 
@@ -162,6 +168,6 @@ exports.deleteBookmark = asyncHandler(async (req, res, next) => {
   }
 
   return next(
-    new ForbiddenError('Not allowed! This bookmark does not belong to you')
+    new ForbiddenError('Not allowed! You do not have access to this bookmark')
   );
 });
