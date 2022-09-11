@@ -58,7 +58,7 @@ exports.getBookmark = asyncHandler(async (req, res, next) => {
 exports.getOneBookmark = asyncHandler(async (req, res, next) => {
   const {
     user: { _id: userId },
-    params: { id: albumId },
+    params: { albumId },
   } = req;
 
   const bookmark = await Bookmark.findOne({
@@ -69,7 +69,7 @@ exports.getOneBookmark = asyncHandler(async (req, res, next) => {
   if (!bookmark) {
     return next(
       new NotFoundError(
-        `There is no bookmark with the given IDs ↔ ${userId}&${albumId}`
+        `There is no bookmark with the given IDs ↔ ${userId} & ${albumId}`
       )
     );
   }
