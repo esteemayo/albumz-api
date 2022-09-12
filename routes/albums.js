@@ -37,9 +37,11 @@ router
   .get(albumController.getAllAlbums)
   .post(authMiddleware.protect, albumController.createAlbum);
 
+router.use(authMiddleware.protect);
+
 router
   .route('/:id')
-  .get(authMiddleware.protect, albumController.getAlbumById)
+  .get(albumController.getAlbumById)
   .patch(albumController.updateAlbum)
   .delete(albumController.deleteAlbum);
 
