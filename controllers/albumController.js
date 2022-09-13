@@ -77,6 +77,25 @@ exports.getUserAlbums = asyncHandler(async (req, res, next) => {
   });
 });
 
+exports.getFeaturedAlbums = asyncHandler(async (req, res, next) => {
+  const albums = await Album.aggregate([
+    {
+      $match: {
+        featured: true,
+        ratingsAverage: { $gte: 4.5 },
+      },
+    },
+    {
+      $sample: { size: 6 },
+    },
+  ]);
+
+  res.status(StatusCodes.OK).json({
+    status: 'success',
+    albums,
+  });
+});
+
 exports.getAlbumsByTag = asyncHandler(async (req, res, next) => {
   const { tag } = req.params;
   const tagQuery = tag || { $exists: true };
