@@ -149,25 +149,28 @@ albumSchema.statics.getFeaturedAlbums = async function () {
 albumSchema.statics.getAlbumStats = async function () {
   const today = new Date();
   const lastYear = new Date(today.setFullYear(today.getFullYear() - 1));
+  const prevYear = new Date(today.setFullYear(lastYear.getFullYear() - 1));
 
   return await this.aggregate([
     {
       $match: {
         ratingsAverage: { $gte: 4.5 },
-        createdAt: { $gte: lastYear },
+        createdAt: { $gte: prevYear },
       },
     },
     {
       $project: {
         year: { $year: '$createdAt' },
+        numRating: '$ratingsQuantity',
+        avgRating: '$ratingsAverage',
       },
     },
     {
       $group: {
         _id: '$year',
         numAlbums: { $sum: 1 },
-        numRating: { $sum: '$ratingsQuantity' },
-        avgRating: { $avg: '$ratingsAverage' },
+        numRating: { $sum: '$numRating' },
+        avgRating: { $avg: '$avgRating' },
       },
     },
   ]);
