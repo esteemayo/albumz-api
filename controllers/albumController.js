@@ -92,7 +92,41 @@ exports.getFeaturedAlbums = asyncHandler(async (req, res, next) => {
 
   res.status(StatusCodes.OK).json({
     status: 'success',
+    nbHits: albums.length,
     albums,
+  });
+});
+
+exports.getAlbumStats = asyncHandler(async (req, res, next) => {
+  const today = new Date();
+  const lastYear = new Date(today.setFullYear(today.getFullYear() - 1));
+
+  const stats = await Album.aggregate([
+    {
+      $match: {
+        ratingsAverage: { $gte: 4.5 },
+        createdAt: { $gte: lastYear },
+      },
+    },
+    {
+      $project: {
+        year: { $year: '$createdAt' },
+      },
+    },
+    {
+      $group: {
+        _id: '$year',
+        numAlbums: { $sum: 1 },
+        numRating: { $sum: '$ratingsQuantity' },
+        avgRating: { $avg: '$ratingsAverage' },
+      },
+    },
+  ]);
+
+  res.status(StatusCodes.OK).json({
+    status: 'success',
+    nbHits: stats.length,
+    stats,
   });
 });
 
