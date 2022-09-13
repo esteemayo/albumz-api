@@ -1,6 +1,7 @@
 const express = require('express');
 
 const reviewRouter = require('./reviews');
+const authController = require('../controllers/authController');
 const authMiddleware = require('../middlewares/authMiddleware');
 const albumController = require('../controllers/albumController');
 
@@ -9,6 +10,13 @@ const router = express.Router();
 router.use('/:albumId/reviews', reviewRouter);
 
 router.get('/search', albumController.searchAlbum);
+
+router.get(
+  '/stats',
+  authMiddleware.protect,
+  authController.restrictTo('admin'),
+  albumController.getAlbumStats
+);
 
 router.get('/featured', albumController.getFeaturedAlbums);
 
