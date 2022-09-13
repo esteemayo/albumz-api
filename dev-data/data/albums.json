@@ -12,6 +12,7 @@
     "ratingsQuantity": 6,
     "tags": ["album", "newmusic"],
     "image": "https://res.cloudinary.com/learntocodewithnode/image/upload/v1610380457/m7u56ywnphqbhaekbxny.jpg",
+    "featured": false,
     "user": "5e13306543a6531e9425fa07",
     "createdAt": "2021-01-22T13:17:03.866+00:00",
     "updatedAt": "2021-01-22T13:17:03.866+00:00"
@@ -29,6 +30,7 @@
     "ratingsQuantity": 9,
     "tags": ["albumcover", "songs"],
     "image": "https://res.cloudinary.com/learntocodewithnode/image/upload/v1610378940/v3t2s7qnnxfsewnygm3j.jpg",
+    "featured": false,
     "user": "5e14b003e93a124218ad0e58",
     "createdAt": "2021-01-22T13:17:03.866+00:00",
     "updatedAt": "2021-01-22T13:17:03.866+00:00"
@@ -46,6 +48,7 @@
     "ratingsQuantity": 6,
     "tags": ["newmusic"],
     "image": "https://res.cloudinary.com/learntocodewithnode/image/upload/v1610380169/kbotssezlwtac9u9k1ft.jpg",
+    "featured": false,
     "user": "5e14b003e93a124218ad0e58",
     "createdAt": "2021-01-22T13:17:03.866+00:00",
     "updatedAt": "2021-01-22T13:17:03.866+00:00"
@@ -63,6 +66,7 @@
     "ratingsQuantity": 7,
     "tags": ["album", "albumcover", "newmusic"],
     "image": "https://res.cloudinary.com/learntocodewithnode/image/upload/v1610380788/m8zkf1njn0riahyfbwsf.jpg",
+    "featured": false,
     "user": "5e14b003e93a124218ad0e58",
     "createdAt": "2021-01-22T13:17:03.866+00:00",
     "updatedAt": "2021-01-22T13:17:03.866+00:00"
@@ -80,6 +84,7 @@
     "ratingsQuantity": 5,
     "tags": ["albumcover", "songs", "newmusic"],
     "image": "https://res.cloudinary.com/learntocodewithnode/image/upload/v1579140088/yl45zibhkwfiqmucj7fq.jpg",
+    "featured": false,
     "user": "5e13b9c9878ec80a3824e354",
     "createdAt": "2021-01-22T13:17:03.866+00:00",
     "updatedAt": "2021-01-22T13:17:03.866+00:00"
@@ -97,6 +102,7 @@
     "ratingsQuantity": 7,
     "tags": ["songs", "newmusic"],
     "image": "https://res.cloudinary.com/learntocodewithnode/image/upload/v1579140741/npwjqnwrzvd2tyccnneb.jpg",
+    "featured": false,
     "user": "5e13b9c9878ec80a3824e354",
     "createdAt": "2021-01-22T13:17:03.866+00:00",
     "updatedAt": "2021-01-22T13:17:03.866+00:00"
@@ -114,6 +120,7 @@
     "ratingsQuantity": 6,
     "tags": ["pop", "hiphop", "albumcover"],
     "image": "https://res.cloudinary.com/learntocodewithnode/image/upload/v1579143013/vdxuptlqovookelzejp8.jpg",
+    "featured": false,
     "user": "5e13b9c9878ec80a3824e354",
     "createdAt": "2021-01-22T13:17:03.866+00:00",
     "updatedAt": "2021-01-22T13:17:03.866+00:00"
@@ -131,6 +138,7 @@
     "ratingsQuantity": 7,
     "tags": ["album", "newmusic", "pop"],
     "image": "https://res.cloudinary.com/learntocodewithnode/image/upload/v1610381577/kytstbzb3m1rigyckzd9.jpg",
+    "featured": true,
     "user": "5efe00c91a85815814599f66",
     "createdAt": "2021-01-22T13:17:03.866+00:00",
     "updatedAt": "2021-01-22T13:17:03.866+00:00"
@@ -148,6 +156,7 @@
     "ratingsQuantity": 7,
     "tags": ["hiphop", "pop", "albumcover", "album", "newmusic", "songs"],
     "image": "https://res.cloudinary.com/learntocodewithnode/image/upload/v1610403016/ne3qqv6ianhjti9huqsz.jpg",
+    "featured": true,
     "user": "5efe00c91a85815814599f66",
     "createdAt": "2021-01-22T13:17:03.866+00:00",
     "updatedAt": "2021-01-22T13:17:03.866+00:00"
@@ -165,6 +174,7 @@
     "ratingsQuantity": 6,
     "tags": ["hiphop", "pop", "albumcover", "album", "newmusic", "songs"],
     "image": "https://res.cloudinary.com/learntocodewithnode/image/upload/v1610403262/gh49vzcj4zao00t5zmfo.jpg",
+    "featured": true,
     "user": "5efe00c91a85815814599f66",
     "createdAt": "2021-01-22T13:17:03.866+00:00",
     "updatedAt": "2021-01-22T13:17:03.866+00:00"
@@ -182,6 +192,7 @@
     "ratingsQuantity": 9,
     "tags": ["hiphop", "pop", "albumcover", "album", "newmusic", "songs"],
     "image": "https://res.cloudinary.com/learntocodewithnode/image/upload/v1610403466/wwctzsri1uainv9ohoku.jpg",
+    "featured": true,
     "user": "5efe00c91a85815814599f66",
     "createdAt": "2021-01-22T13:17:03.866+00:00",
     "updatedAt": "2021-01-22T13:17:03.866+00:00"
@@ -199,6 +210,7 @@
     "ratingsQuantity": 6,
     "tags": ["hiphop", "pop", "albumcover", "album", "newmusic", "songs"],
     "image": "https://res.cloudinary.com/learntocodewithnode/image/upload/v1610403671/yq7sutvjbjaaa22i80d9.jpg",
+    "featured": true,
     "user": "5e13306543a6531e9425fa07",
     "createdAt": "2021-01-22T13:17:03.866+00:00",
     "updatedAt": "2021-01-22T13:17:03.866+00:00"
@@ -216,6 +228,7 @@
     "ratingsQuantity": 7,
     "tags": ["hiphop", "pop", "albumcover", "album", "newmusic", "songs"],
     "image": "https://res.cloudinary.com/learntocodewithnode/image/upload/v1610403844/hjazmlmicrt2ta5llgdx.jpg",
+    "featured": true,
     "user": "5e13306543a6531e9425fa07",
     "createdAt": "2021-01-22T13:17:03.866+00:00",
     "updatedAt": "2021-01-22T13:17:03.866+00:00"
@@ -233,6 +246,7 @@
     "ratingsQuantity": 5,
     "tags": ["albumcover", "songs", "newmusic"],
     "image": "https://res.cloudinary.com/learntocodewithnode/image/upload/v1610404068/aknrsvihgqfkyqhlobhn.jpg",
+    "featured": true,
     "user": "5e13306543a6531e9425fa07",
     "createdAt": "2021-01-22T13:17:03.866+00:00",
     "updatedAt": "2021-01-22T13:17:03.866+00:00"
@@ -250,6 +264,7 @@
     "ratingsQuantity": 7,
     "tags": ["pop", "album"],
     "image": "https://res.cloudinary.com/learntocodewithnode/image/upload/v1610404364/jywfjlmdczs0tf7eewvz.jpg",
+    "featured": false,
     "user": "5e13306543a6531e9425fa07",
     "createdAt": "2021-01-22T13:17:03.866+00:00",
     "updatedAt": "2021-01-22T13:17:03.866+00:00"
@@ -267,6 +282,7 @@
     "ratingsQuantity": 6,
     "tags": ["hiphop"],
     "image": "https://res.cloudinary.com/learntocodewithnode/image/upload/v1610406289/qaynbohosmwq63qknqwf.jpg",
+    "featured": true,
     "user": "5e13b9c9878ec80a3824e354",
     "createdAt": "2021-01-22T13:17:03.866+00:00",
     "updatedAt": "2021-01-22T13:17:03.866+00:00"
@@ -284,6 +300,7 @@
     "ratingsQuantity": 7,
     "tags": ["songs", "newmusic", "album"],
     "image": "https://res.cloudinary.com/learntocodewithnode/image/upload/v1610406526/uhryylbphzq8d7mtwbgz.jpg",
+    "featured": true,
     "user": "5e13b9c9878ec80a3824e354",
     "createdAt": "2021-01-22T13:17:03.866+00:00",
     "updatedAt": "2021-01-22T13:17:03.866+00:00"
@@ -301,6 +318,7 @@
     "ratingsQuantity": 7,
     "tags": ["pop", "hiphop", "newmusic"],
     "image": "https://res.cloudinary.com/learntocodewithnode/image/upload/v1610406718/vz9o3rsty0la8ibfobgb.jpg",
+    "featured": false,
     "user": "5e13b9c9878ec80a3824e354",
     "createdAt": "2021-01-22T13:17:03.866+00:00",
     "updatedAt": "2021-01-22T13:17:03.866+00:00"
@@ -318,6 +336,7 @@
     "ratingsQuantity": 6,
     "tags": ["hiphop", "albumcover"],
     "image": "https://res.cloudinary.com/learntocodewithnode/image/upload/v1610406907/kkumdlpigqaet9ecnjs0.jpg",
+    "featured": false,
     "user": "5e14b003e93a124218ad0e58",
     "createdAt": "2021-01-22T13:17:03.866+00:00",
     "updatedAt": "2021-01-22T13:17:03.866+00:00"
@@ -335,6 +354,7 @@
     "ratingsQuantity": 9,
     "tags": ["album", "hiphop", "newmusic"],
     "image": "https://res.cloudinary.com/learntocodewithnode/image/upload/v1610407182/oa08b7dyaxosap37fuaf.jpg",
+    "featured": false,
     "user": "5e14b003e93a124218ad0e58",
     "createdAt": "2021-01-22T13:17:03.866+00:00",
     "updatedAt": "2021-01-22T13:17:03.866+00:00"
@@ -352,6 +372,7 @@
     "ratingsQuantity": 6,
     "tags": ["pop", "songs"],
     "image": "https://res.cloudinary.com/learntocodewithnode/image/upload/v1610407358/pb94q2tnsdwpdgnnxy28.jpg",
+    "featured": false,
     "user": "5e14b003e93a124218ad0e58",
     "createdAt": "2021-01-22T13:17:03.866+00:00",
     "updatedAt": "2021-01-22T13:17:03.866+00:00"
