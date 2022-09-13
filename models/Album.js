@@ -5,10 +5,12 @@ const albumSchema = new mongoose.Schema(
   {
     artist: {
       type: String,
+      trim: true,
       required: [true, 'Album must have an artist'],
     },
     title: {
       type: String,
+      trim: true,
       required: [true, 'Album must have must a title'],
     },
     genre: {
@@ -126,6 +128,47 @@ albumSchema.statics.getTagsList = function () {
     },
     {
       $sort: { count: -1 },
+    },
+  ]);
+};
+
+albumSchema.statics.getFeaturedAlbums = async function () {
+  return await this.aggregate([
+    {
+      $match: {
+        featured: true,
+        ratingsAverage: { $gte: 4.5 },
+      },
+    },
+    {
+      $sample: { size: 6 },
+    },
+  ]);
+};
+
+albumSchema.statics.getAlbumStats = async function () {
+  const today = new Date();
+  const lastYear = new Date(today.setFullYear(today.getFullYear() - 1));
+
+  return await this.aggregate([
+    {
+      $match: {
+        ratingsAverage: { $gte: 4.5 },
+        createdAt: { $gte: lastYear },
+      },
+    },
+    {
+      $project: {
+        year: { $year: '$createdAt' },
+      },
+    },
+    {
+      $group: {
+        _id: '$year',
+        numAlbums: { $sum: 1 },
+        numRating: { $sum: '$ratingsQuantity' },
+        avgRating: { $avg: '$ratingsAverage' },
+      },
     },
   ]);
 };
