@@ -10,7 +10,8 @@
     "role": "admin",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
+    "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5eb306dd73cf483374ddbe3f",
@@ -23,7 +24,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$BsxlEr5n7qInCd03I60vi.DOrPhzIpt5TK7cE2z9gNfOHIxZZbupq"
+    "password": "$2a$12$BsxlEr5n7qInCd03I60vi.DOrPhzIpt5TK7cE2z9gNfOHIxZZbupq",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5eb30d58848dad46f4d82bfc",
@@ -36,7 +38,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$4ZGvdZMk/y/UKUMHBk/XxuPtPisxyo5PKh/DXO9yKQ9JT9ykigTEa"
+    "password": "$2a$12$4ZGvdZMk/y/UKUMHBk/XxuPtPisxyo5PKh/DXO9yKQ9JT9ykigTEa",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5c8a1dfa2f8fb814b56fa181",
@@ -49,7 +52,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$hP1h2pnNp7wgyZNRwPsOTeZuNzWBv7vHmsR3DT/OaPSUBQT.y0S.."
+    "password": "$2a$12$hP1h2pnNp7wgyZNRwPsOTeZuNzWBv7vHmsR3DT/OaPSUBQT.y0S..",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5c8a1e1a2f8fb814b56fa182",
@@ -62,7 +66,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$9nFqToiTmjgfFVJiQvjmreLt4k8X4gGYCETGapSZOb2hHa55t0dDq"
+    "password": "$2a$12$9nFqToiTmjgfFVJiQvjmreLt4k8X4gGYCETGapSZOb2hHa55t0dDq",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5c8a1ec62f8fb814b56fa183",
@@ -75,7 +80,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$tm33.M/4pfEbZF64WbFuHuVFv85v4qEhi.ik8njbud7yaoqCZpjiy"
+    "password": "$2a$12$tm33.M/4pfEbZF64WbFuHuVFv85v4qEhi.ik8njbud7yaoqCZpjiy",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5c8a1f292f8fb814b56fa184",
@@ -88,7 +94,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$OOPr90tBEBF1Iho3ox0Jde0O/WXUR0VLA5xdh6tWcu7qb.qOCvSg2"
+    "password": "$2a$12$OOPr90tBEBF1Iho3ox0Jde0O/WXUR0VLA5xdh6tWcu7qb.qOCvSg2",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5c8a1f4e2f8fb814b56fa185",
@@ -101,7 +108,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$XCXvvlhRBJ8CydKH09v1v.jpg0hB9gVVfMVEoz4MsxqL9zb5PrF42"
+    "password": "$2a$12$XCXvvlhRBJ8CydKH09v1v.jpg0hB9gVVfMVEoz4MsxqL9zb5PrF42",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5c8a201e2f8fb814b56fa186",
@@ -114,7 +122,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$II1F3aBSFDF3Xz7iB4rk/.a2dogwkClMN5gGCWrRlILrG1xtJG7q6"
+    "password": "$2a$12$II1F3aBSFDF3Xz7iB4rk/.a2dogwkClMN5gGCWrRlILrG1xtJG7q6",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5c8a20d32f8fb814b56fa187",
@@ -127,7 +136,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$Jb/ILhdDV.ZpnPMu19xfe.NRh5ntE2LzNMNcsty05QWwRbmFFVMKO"
+    "password": "$2a$12$Jb/ILhdDV.ZpnPMu19xfe.NRh5ntE2LzNMNcsty05QWwRbmFFVMKO",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5c8a211f2f8fb814b56fa188",
@@ -140,7 +150,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$r7/jtdWtzNfrfC7zw3uS.eDJ3Bs.8qrO31ZdbMljL.lUY0TAsaAL6"
+    "password": "$2a$12$r7/jtdWtzNfrfC7zw3uS.eDJ3Bs.8qrO31ZdbMljL.lUY0TAsaAL6",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5c8a21d02f8fb814b56fa189",
@@ -153,7 +164,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$q7v9dm.S4DvqhAeBc4KwduedEDEkDe2GGFGzteW6xnHt120oRpkqm"
+    "password": "$2a$12$q7v9dm.S4DvqhAeBc4KwduedEDEkDe2GGFGzteW6xnHt120oRpkqm",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5c8a21f22f8fb814b56fa18a",
@@ -166,7 +178,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$lKWhzujFvQwG4m/X3mnTneOB3ib9IYETsOqQ8aN5QEWDjX6X2wJJm"
+    "password": "$2a$12$lKWhzujFvQwG4m/X3mnTneOB3ib9IYETsOqQ8aN5QEWDjX6X2wJJm",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5c8a22c62f8fb814b56fa18b",
@@ -179,7 +192,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$.XIvvmznHQSa9UOI639yhe4vzHKCYO1vpTUZc4d45oiT4GOZQe1kS"
+    "password": "$2a$12$.XIvvmznHQSa9UOI639yhe4vzHKCYO1vpTUZc4d45oiT4GOZQe1kS",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5c8a23412f8fb814b56fa18c",
@@ -192,7 +206,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$D3fyuS9ETdBBw5lOwceTMuZcDTyVq28ieeGUAanIuLMcSDz6bpfIe"
+    "password": "$2a$12$D3fyuS9ETdBBw5lOwceTMuZcDTyVq28ieeGUAanIuLMcSDz6bpfIe",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5c8a23c82f8fb814b56fa18d",
@@ -205,7 +220,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$VPYaAAOsI44uhq11WbZ5R.cHT4.fGdlI9gKJd95jmYw3.sAsmbvBq"
+    "password": "$2a$12$VPYaAAOsI44uhq11WbZ5R.cHT4.fGdlI9gKJd95jmYw3.sAsmbvBq",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5c8a23de2f8fb814b56fa18e",
@@ -218,7 +234,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$l5qamwqcqC2NlgN6o5A5..9Fxzr6X.bjx/8j3a9jYUHWGOL99oXlm"
+    "password": "$2a$12$l5qamwqcqC2NlgN6o5A5..9Fxzr6X.bjx/8j3a9jYUHWGOL99oXlm",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5c8a24282f8fb814b56fa18f",
@@ -231,7 +248,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$IUnwPH0MGFeMuz7g4gtfvOll.9wgLyxG.9C3TKlttfLtCQWEE6GIu"
+    "password": "$2a$12$IUnwPH0MGFeMuz7g4gtfvOll.9wgLyxG.9C3TKlttfLtCQWEE6GIu",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5c8a24402f8fb814b56fa190",
@@ -244,7 +262,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$NnclhoYFNcSApoQ3ML8kk.b4B3gbpOmZJLfqska07miAnXukOgK6y"
+    "password": "$2a$12$NnclhoYFNcSApoQ3ML8kk.b4B3gbpOmZJLfqska07miAnXukOgK6y",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5c8a245f2f8fb814b56fa191",
@@ -257,7 +276,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$uB5H1OxLMOqDYTuTlptAoewlovENJvjrLwzsL1wUZ6OkAIByPPBGq"
+    "password": "$2a$12$uB5H1OxLMOqDYTuTlptAoewlovENJvjrLwzsL1wUZ6OkAIByPPBGq",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5c8a24822f8fb814b56fa192",
@@ -270,7 +290,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$11JElTatQlAFo1Obw/dwd..vuVmQyYS7MT14pkl3lRvVPjGA00G8O"
+    "password": "$2a$12$11JElTatQlAFo1Obw/dwd..vuVmQyYS7MT14pkl3lRvVPjGA00G8O",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5c8a24a02f8fb814b56fa193",
@@ -283,7 +304,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$uA9FsDw63v6dkJKGlLQ/8ufYBs8euB7kqIQewyYlZXU5azEKeLEky"
+    "password": "$2a$12$uA9FsDw63v6dkJKGlLQ/8ufYBs8euB7kqIQewyYlZXU5azEKeLEky",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5e13306543a6531e9425fa07",
@@ -310,7 +332,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$47zKK6yJuJP3Cw1bzGrKSuRheBL6hvYFfCG4ORb5X9Lqfeghk1ThC"
+    "password": "$2a$12$47zKK6yJuJP3Cw1bzGrKSuRheBL6hvYFfCG4ORb5X9Lqfeghk1ThC",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5e13b9c9878ec80a3824e354",
@@ -323,7 +346,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$LRf1m6YY4Q2pMjuzJUNI.eZ6jYWygoUKaIHXsBQgN3LHiqzGePVW."
+    "password": "$2a$12$LRf1m6YY4Q2pMjuzJUNI.eZ6jYWygoUKaIHXsBQgN3LHiqzGePVW.",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5e14aea7026b4a30786831ee",
@@ -344,7 +368,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$7UKbnQ88Vw3iwmbNLT9w8.TYxJrVUsT9q30/qvw/Li8.yhn3UfJcu"
+    "password": "$2a$12$7UKbnQ88Vw3iwmbNLT9w8.TYxJrVUsT9q30/qvw/Li8.yhn3UfJcu",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5e14b003e93a124218ad0e58",
@@ -357,7 +382,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$8n2tL0RQUUErCB0dgfrtAeWY5VGq03yuGLMiABI7k9k4LQxnxocIK"
+    "password": "$2a$12$8n2tL0RQUUErCB0dgfrtAeWY5VGq03yuGLMiABI7k9k4LQxnxocIK",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5efe00c91a85815814599f66",
@@ -378,7 +404,8 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$u7T//yZHdelvUBm9/Sl/cul3nlV1Y2dyFlut/7tOBt6IsbWFTCssu"
+    "password": "$2a$12$u7T//yZHdelvUBm9/Sl/cul3nlV1Y2dyFlut/7tOBt6IsbWFTCssu",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
   {
     "_id": "5ffe3a574c8e754cb43516c3",
@@ -398,6 +425,7 @@
     "role": "user",
     "active": true,
     "avatar": "",
-    "password": "$2a$12$y1UHboIcUoPo7Tbaz3eQC.gNHIF7pZ7J572RmEzPDSJ201umOJPEG"
+    "password": "$2a$12$y1UHboIcUoPo7Tbaz3eQC.gNHIF7pZ7J572RmEzPDSJ201umOJPEG",
+    "createdAt": "2021-01-22T13:17:03.866+00:00"
   }
 ]
