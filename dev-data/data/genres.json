@@ -1,0 +1,57 @@
+[
+  {
+    "_id": "5e13beba64ba463120634f71",
+    "name": "Reggae",
+    "user": "5e13306543a6531e9425fa07"
+  },
+  {
+    "_id": "5e13beca64ba463120634f72",
+    "name": "Dance Hall",
+    "user": "5e13306543a6531e9425fa07"
+  },
+  {
+    "_id": "5e13c00ee3d40f35b4e400f7",
+    "name": "Rap",
+    "user": "5e13b9c9878ec80a3824e354"
+  },
+  {
+    "_id": "5e13c020e3d40f35b4e400f8",
+    "name": "Pop",
+    "user": "5e13b9c9878ec80a3824e354"
+  },
+  {
+    "_id": "5e14b026e93a124218ad0e59",
+    "name": "R&B",
+    "user": "5e14b003e93a124218ad0e58"
+  },
+  {
+    "_id": "5e14b09c0b087914849297b7",
+    "name": "Rock",
+    "user": "5e14b003e93a124218ad0e58"
+  },
+  {
+    "_id": "5e14b0cb0b087914849297b9",
+    "name": "Hip Hop",
+    "user": "5e14b003e93a124218ad0e58"
+  },
+  {
+    "_id": "5e14b0db0b087914849297bb",
+    "name": "Trap",
+    "user": "5e14b003e93a124218ad0e58"
+  },
+  {
+    "_id": "5e14b0e30b087914849297bc",
+    "name": "Alternative",
+    "user": "5e14b003e93a124218ad0e58"
+  },
+  {
+    "_id": "60022c0d1856ed5a347e85d9",
+    "name": "Afro Fusion",
+    "user": "5ffe3a574c8e754cb43516c3"
+  },
+  {
+    "_id": "60022c201856ed5a347e85da",
+    "name": "AfroBeats",
+    "user": "5ffe3a574c8e754cb43516c3"
+  }
+]
