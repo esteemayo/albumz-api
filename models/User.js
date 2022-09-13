@@ -141,11 +141,12 @@ userSchema.methods.createPasswordResetToken = function () {
 userSchema.statics.getUserStats = async function () {
   const date = new Date();
   const lastYear = new Date(date.setFullYear(date.getFullYear() - 1));
+  const prevYear = new Date(date.setFullYear(lastYear.getFullYear() - 1));
 
   return await this.aggregate([
     {
       $match: {
-        createdAt: { $gte: lastYear },
+        createdAt: { $gte: prevYear },
       },
     },
     {
@@ -158,6 +159,9 @@ userSchema.statics.getUserStats = async function () {
         _id: '$month',
         total: { $sum: 1 },
       },
+    },
+    {
+      $sort: { _id: 1 },
     },
   ]);
 };
