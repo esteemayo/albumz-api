@@ -173,6 +173,9 @@ albumSchema.statics.getAlbumStats = async function () {
         avgRating: { $avg: '$avgRating' },
       },
     },
+    {
+      $sort: { _id: 1 },
+    },
   ]);
 };
 
