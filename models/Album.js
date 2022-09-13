@@ -51,6 +51,10 @@ const albumSchema = new mongoose.Schema(
         message: 'Album should have at least one tag',
       },
     },
+    image: {
+      type: String,
+      default: '',
+    },
     user: {
       type: mongoose.Types.ObjectId,
       ref: 'User',
