@@ -55,6 +55,10 @@ const albumSchema = new mongoose.Schema(
       type: String,
       default: '',
     },
+    featured: {
+      type: Boolean,
+      default: false,
+    },
     user: {
       type: mongoose.Types.ObjectId,
       ref: 'User',
