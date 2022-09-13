@@ -10,6 +10,8 @@ router.use('/:albumId/reviews', reviewRouter);
 
 router.get('/search', albumController.searchAlbum);
 
+router.get('/featured', albumController.getFeaturedAlbums);
+
 router.post('/related-albums', albumController.getRelatedAlbums);
 
 router.get('/tags/:tag', albumController.getAlbumsByTag);
