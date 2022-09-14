@@ -179,6 +179,37 @@ albumSchema.statics.getAlbumStats = async function () {
   ]);
 };
 
+albumSchema.statics.getTopAlbums = async function () {
+  return this.aggregate([
+    {
+      $lookup: {
+        from: 'reviews',
+        foreignField: 'album',
+        localField: '_id',
+        as: 'reviews',
+      },
+    },
+    {
+      $match: { 'reviews.1': { $exists: true } },
+    },
+    {
+      $project: {
+        title: '$title',
+        reviews: '$reviews',
+        slug: '$slug',
+        image: '$image',
+        avgRating: { $avg: '$reviews.rating' },
+      },
+    },
+    {
+      $sort: { avgRating: -1 },
+    },
+    {
+      $limit: 10,
+    },
+  ]);
+};
+
 const Album = mongoose.models.Album || mongoose.model('Album', albumSchema);
 
 module.exports = Album;
