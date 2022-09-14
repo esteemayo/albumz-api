@@ -97,6 +97,16 @@ exports.getAlbumStats = asyncHandler(async (req, res, next) => {
   });
 });
 
+exports.getTopAlbums = asyncHandler(async (req, res, next) => {
+  const albums = await Album.getTopAlbums();
+
+  res.status(StatusCodes.OK).json({
+    status: 'success',
+    nbHits: albums.length,
+    albums,
+  });
+});
+
 exports.getAlbumsByTag = asyncHandler(async (req, res, next) => {
   const { tag } = req.params;
   const tagQuery = tag || { $exists: true };
