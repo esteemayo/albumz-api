@@ -18,6 +18,8 @@ router.get(
   albumController.getAlbumStats
 );
 
+router.get('/top', authMiddleware.protect, albumController.getTopAlbums);
+
 router.get('/featured', albumController.getFeaturedAlbums);
 
 router.post('/related-albums', albumController.getRelatedAlbums);
