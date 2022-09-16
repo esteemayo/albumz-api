@@ -198,19 +198,10 @@ exports.getAlbumBySlug = asyncHandler(async (req, res, next) => {
     );
   }
 
-  if (
-    String(album.user._id) === String(req.user._id) ||
-    req.user.role === 'admin'
-  ) {
-    return res.status(StatusCodes.OK).json({
-      status: 'success',
-      album,
-    });
-  }
-
-  return next(
-    new ForbiddenError('Not allowed! This album does not belong to you')
-  );
+  res.status(StatusCodes.OK).json({
+    status: 'success',
+    album,
+  });
 });
 
 exports.createAlbum = asyncHandler(async (req, res, next) => {
