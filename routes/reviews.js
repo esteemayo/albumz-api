@@ -6,6 +6,8 @@ const reviewController = require('../controllers/reviewController');
 
 const router = express.Router({ mergeParams: true });
 
+router.get('/top', reviewController.getTopReviews);
+
 router.use(authMiddleware.protect);
 
 router
