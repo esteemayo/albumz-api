@@ -26,6 +26,15 @@ exports.getReviews = asyncHandler(async (req, res, next) => {
   });
 });
 
+exports.getTopReviews = asyncHandler(async (req, res, next) => {
+  const reviews = await Review.getTopReviews();
+
+  res.status(StatusCodes.OK).json({
+    status: 'success',
+    reviews,
+  });
+});
+
 exports.getReview = asyncHandler(async (req, res, next) => {
   const { id: reviewId } = req.params;
 
