@@ -73,7 +73,10 @@ const userSchema = new mongoose.Schema(
     id: {
       type: String,
     },
-    avatar: String,
+    avatar: {
+      type: String,
+      default: '',
+    },
     resetPasswordToken: String,
     resetPasswordExpires: Date,
     passwordChangedAt: Date,
