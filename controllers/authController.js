@@ -26,6 +26,34 @@ exports.login = asyncHandler(async (req, res, next) => {
   createSendToken(user, StatusCodes.OK, req, res);
 });
 
+exports.googleLogin = asyncHandler(async (req, res, next) => {
+  const { name, email, username, googleId, token } = req.body;
+
+  let user = await User.findOne({ email });
+  if (user) {
+    user = {
+      _id: user._id.toString(),
+      name,
+      email,
+      username,
+      googleId,
+    };
+
+    return res.status(StatusCodes.OK).json({
+      status: 'success',
+      token,
+      user,
+    });
+  }
+
+  user = await User.create({ ...req.body });
+  return res.status(StatusCodes.OK).json({
+    status: 'success',
+    token,
+    user,
+  });
+});
+
 exports.restrictTo =
   (...roles) =>
   (req, res, next) => {
