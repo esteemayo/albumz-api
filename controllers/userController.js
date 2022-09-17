@@ -10,7 +10,22 @@ const NotFoundError = require('../errors/notFound');
 const BadRequestError = require('../errors/badRequest');
 
 exports.register = asyncHandler(async (req, res, next) => {
-  const user = await User.create({ ...req.body });
+  const newUser = _.pick(req.body, [
+    'id',
+    'name',
+    'email',
+    'role',
+    'username',
+    'password',
+    'googeId',
+    'confirmPassword',
+    'location',
+    'favGenres',
+    'favArtists',
+    'passwordChangedAt',
+  ]);
+
+  const user = await User.create({ ...newUser });
 
   if (user) {
     createSendToken(user, StatusCodes.CREATED, req, res);
