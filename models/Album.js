@@ -198,6 +198,7 @@ albumSchema.statics.getTopAlbums = async function () {
         reviews: '$reviews',
         slug: '$slug',
         image: '$image',
+        artist: '$artist',
         avgRating: { $avg: '$reviews.rating' },
       },
     },
