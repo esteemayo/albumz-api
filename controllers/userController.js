@@ -131,10 +131,7 @@ exports.updateMe = asyncHandler(async (req, res, next) => {
     }
   );
 
-  res.status(StatusCodes.OK).json({
-    status: 'success',
-    user: updatedUser,
-  });
+  createSendToken(updatedUser, StatusCodes.OK, req, res);
 });
 
 exports.deleteUser = asyncHandler(async (req, res, next) => {
