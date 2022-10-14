@@ -27,6 +27,15 @@ genreSchema.pre('save', function (next) {
   next();
 });
 
+genreSchema.pre(/^find/, function (next) {
+  this.populate({
+    path: 'user',
+    select: 'name username avatar',
+  });
+
+  next();
+});
+
 const Genre = mongoose.models.Genre || mongoose.model('Genre', genreSchema);
 
 module.exports = Genre;
