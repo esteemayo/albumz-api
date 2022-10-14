@@ -5,6 +5,8 @@ const genreController = require('../controllers/genreController');
 
 const router = express.Router();
 
+router.get('/all', genreController.getAllGenres);
+
 router.use(authMiddleware.protect);
 
 router.get('/show/:slug', genreController.getGenreBySlug);
