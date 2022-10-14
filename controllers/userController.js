@@ -5,6 +5,7 @@ const asyncHandler = require('express-async-handler');
 const User = require('../models/User');
 const Album = require('../models/Album');
 const Genre = require('../models/Genre');
+const Bookmark = require('../models/Bookmark');
 const createSendToken = require('../utils/createSendToken');
 const NotFoundError = require('../errors/notFound');
 const BadRequestError = require('../errors/badRequest');
@@ -160,6 +161,7 @@ exports.deleteMe = asyncHandler(async (req, res, next) => {
 
   await Album.deleteMany({ user: user._id });
   await Genre.deleteMany({ user: user._id });
+  await Bookmark.deleteMany({ user: user._id });
 
   res.status(StatusCodes.NO_CONTENT).json({
     status: 'success',
