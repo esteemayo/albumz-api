@@ -26,6 +26,23 @@ exports.getGenres = asyncHandler(async (req, res, next) => {
   });
 });
 
+exports.getAllGenres = asyncHandler(async (req, res, next) => {
+  const features = new APIFeatures(Genre.find(), req.query)
+    .filter()
+    .sort()
+    .limitFields()
+    .paginate();
+
+  const genres = await features.query;
+
+  res.status(StatusCodes.OK).json({
+    status: 'success',
+    requestedAt: req.requestTime,
+    nbHits: genres.length,
+    genres,
+  });
+});
+
 exports.getGenreById = asyncHandler(async (req, res, next) => {
   const { id: genreId } = req.params;
 
@@ -64,7 +81,7 @@ exports.getGenreBySlug = asyncHandler(async (req, res, next) => {
   }
 
   if (
-    String(genre.user) === String(req.user._id) ||
+    String(genre.user._id) === String(req.user._id) ||
     req.user.role === 'admin'
   ) {
     return res.status(StatusCodes.OK).json({
@@ -105,7 +122,7 @@ exports.updateGenre = asyncHandler(async (req, res, next) => {
   if (req.body.name) req.body.slug = slugify(req.body.name, { lower: true });
 
   if (
-    String(genre.user) === String(req.user._id) ||
+    String(genre.user._id) === String(req.user._id) ||
     req.user.role === 'admin'
   ) {
     const updatedGenre = await Genre.findByIdAndUpdate(
@@ -140,7 +157,7 @@ exports.deleteGenre = asyncHandler(async (req, res, next) => {
   }
 
   if (
-    String(genre.user) === String(req.user._id) ||
+    String(genre.user._id) === String(req.user._id) ||
     req.user.role === 'admin'
   ) {
     await genre.remove();
