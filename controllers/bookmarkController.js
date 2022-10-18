@@ -111,7 +111,7 @@ exports.createBookmark = asyncHandler(async (req, res, next) => {
   });
 
   if (bookmark) {
-    return next(new BadRequestError('You already habe this set as a bookmark'));
+    return next(new BadRequestError('You already have this set as a bookmark'));
   }
 
   bookmark = await Bookmark.create({ ...req.body });
