@@ -55,6 +55,7 @@ exports.getAllAlbums = asyncHandler(async (req, res, next) => {
     totalAlbums: total,
     numberOfPages,
     albums,
+    limit,
   });
 });
 
