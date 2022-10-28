@@ -37,7 +37,7 @@ exports.getAllAlbums = asyncHandler(async (req, res, next) => {
 
   // pagination
   const page = req.query.page * 1 || 1;
-  const limit = req.query.limit * 1 || 9;
+  const limit = req.query.limit * 1 || 6;
   const skip = (page - 1) * limit;
 
   const total = await Album.countDocuments();
