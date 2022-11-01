@@ -8,6 +8,8 @@ const Album = require('../../models/Album');
 const Genre = require('../../models/Genre');
 const Review = require('../../models/Review');
 const User = require('../../models/User');
+const History = require('../../models/History');
+const Bookmark = require('../../models/Bookmark');
 
 dotenv.config({ path: './config.env' });
 const connectDB = require('../../config/db');
@@ -48,6 +50,8 @@ const deleteData = async () => {
     await Genre.deleteMany();
     await Review.deleteMany();
     await User.deleteMany();
+    await History.deleteMany();
+    await Bookmark.deleteMany();
     console.log(
       'Data successfully deleted! To load sample data, run\n\n\t npm run sample\n\n'
         .blue.bold
