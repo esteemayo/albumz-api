@@ -107,7 +107,7 @@
     "favArtists": ["Omah Lay", "Joe Boy", "Fireboy DML"],
     "role": "user",
     "active": true,
-    "avatar": "",
+    "avatar": "http://res.cloudinary.com/learnhowtocode/image/upload/v1667930297/albumz/qhwhckj6opnytovrjmvc.jpg",
     "password": "$2a$12$XCXvvlhRBJ8CydKH09v1v.jpg0hB9gVVfMVEoz4MsxqL9zb5PrF42",
     "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
