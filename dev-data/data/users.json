@@ -303,7 +303,7 @@
     "favArtists": ["Bob Marley", "Blxst", "TEMS"],
     "role": "user",
     "active": true,
-    "avatar": "",
+    "avatar": "http://res.cloudinary.com/learnhowtocode/image/upload/v1667931227/albumz/j9qwbhsmn1zzumugxs4a.jpg",
     "password": "$2a$12$uA9FsDw63v6dkJKGlLQ/8ufYBs8euB7kqIQewyYlZXU5azEKeLEky",
     "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
