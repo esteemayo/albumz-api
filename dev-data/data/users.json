@@ -65,7 +65,7 @@
     "favArtists": ["Jay Z", "Davido", "Lil Wayne", "Olamide", "Omah Lay"],
     "role": "user",
     "active": true,
-    "avatar": "",
+    "avatar": "http://res.cloudinary.com/learnhowtocode/image/upload/v1667930209/albumz/rwv5wx7uaiwhgyuij1lg.jpg",
     "password": "$2a$12$9nFqToiTmjgfFVJiQvjmreLt4k8X4gGYCETGapSZOb2hHa55t0dDq",
     "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
