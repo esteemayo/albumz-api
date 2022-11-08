@@ -177,7 +177,7 @@
     "favArtists": ["Lil Wayne", "Laycon", "Davido", "Olamide"],
     "role": "user",
     "active": true,
-    "avatar": "",
+    "avatar": "http://res.cloudinary.com/learnhowtocode/image/upload/v1667930667/albumz/dbdrkirnhg1rvdjdzbmm.jpg",
     "password": "$2a$12$lKWhzujFvQwG4m/X3mnTneOB3ib9IYETsOqQ8aN5QEWDjX6X2wJJm",
     "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
