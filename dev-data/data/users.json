@@ -135,7 +135,7 @@
     "favArtists": ["Davido", "BXNX", "Wizkid"],
     "role": "user",
     "active": true,
-    "avatar": "",
+    "avatar": "http://res.cloudinary.com/learnhowtocode/image/upload/v1667930416/albumz/vklzzogfmlgpebja2l7r.jpg",
     "password": "$2a$12$Jb/ILhdDV.ZpnPMu19xfe.NRh5ntE2LzNMNcsty05QWwRbmFFVMKO",
     "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
