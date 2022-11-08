@@ -289,7 +289,7 @@
     "favArtists": ["Laycon", "MI", "Joe Boy", "Kehlani"],
     "role": "user",
     "active": true,
-    "avatar": "",
+    "avatar": "http://res.cloudinary.com/learnhowtocode/image/upload/v1667931167/albumz/bk5lxd8scrpkbb7hw2dg.jpg",
     "password": "$2a$12$11JElTatQlAFo1Obw/dwd..vuVmQyYS7MT14pkl3lRvVPjGA00G8O",
     "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
