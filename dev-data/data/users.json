@@ -93,7 +93,7 @@
     "favArtists": ["Fela", "Future", "Da Baby"],
     "role": "user",
     "active": true,
-    "avatar": "",
+    "avatar": "http://res.cloudinary.com/learnhowtocode/image/upload/v1667930031/albumz/ceirecyfonftcdbuzf7k.jpg",
     "password": "$2a$12$OOPr90tBEBF1Iho3ox0Jde0O/WXUR0VLA5xdh6tWcu7qb.qOCvSg2",
     "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
