@@ -121,7 +121,7 @@
     "favArtists": ["Olamide", "Oxlade", "Tiwa Savage"],
     "role": "user",
     "active": true,
-    "avatar": "",
+    "avatar": "http://res.cloudinary.com/learnhowtocode/image/upload/v1667930374/albumz/dozy2dgfxwvnwqhz9cwt.jpg",
     "password": "$2a$12$II1F3aBSFDF3Xz7iB4rk/.a2dogwkClMN5gGCWrRlILrG1xtJG7q6",
     "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
