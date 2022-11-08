@@ -163,7 +163,7 @@
     "favArtists": ["Rick Ross", "J Cole", "Jay Z", "Lil Wayne", "Laycon"],
     "role": "user",
     "active": true,
-    "avatar": "",
+    "avatar": "http://res.cloudinary.com/learnhowtocode/image/upload/v1667930557/albumz/h87kobig1wues6ecwhds.jpg",
     "password": "$2a$12$q7v9dm.S4DvqhAeBc4KwduedEDEkDe2GGFGzteW6xnHt120oRpkqm",
     "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
