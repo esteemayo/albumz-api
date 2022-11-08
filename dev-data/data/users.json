@@ -261,7 +261,7 @@
     "favArtists": ["West Life", "Fela", "Future", "Oxlade"],
     "role": "user",
     "active": true,
-    "avatar": "",
+    "avatar": "http://res.cloudinary.com/learnhowtocode/image/upload/v1667931042/albumz/pm0qypjbdr7htg1giona.jpg",
     "password": "$2a$12$NnclhoYFNcSApoQ3ML8kk.b4B3gbpOmZJLfqska07miAnXukOgK6y",
     "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
