@@ -367,7 +367,7 @@
     ],
     "role": "user",
     "active": true,
-    "avatar": "",
+    "avatar": "http://res.cloudinary.com/learnhowtocode/image/upload/v1667931437/albumz/ivhqahsrtzgt3rzyxq2f.jpg",
     "password": "$2a$12$7UKbnQ88Vw3iwmbNLT9w8.TYxJrVUsT9q30/qvw/Li8.yhn3UfJcu",
     "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
@@ -381,7 +381,7 @@
     "favArtists": ["Adele", "Miley Cyrus", "West Life", "TEMS", "Ed Sheeran"],
     "role": "user",
     "active": true,
-    "avatar": "",
+    "avatar": "http://res.cloudinary.com/learnhowtocode/image/upload/v1667931521/albumz/qshpnalplur6nitawyxr.jpg",
     "password": "$2a$12$8n2tL0RQUUErCB0dgfrtAeWY5VGq03yuGLMiABI7k9k4LQxnxocIK",
     "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
@@ -403,7 +403,7 @@
     ],
     "role": "user",
     "active": true,
-    "avatar": "",
+    "avatar": "http://res.cloudinary.com/learnhowtocode/image/upload/v1667931721/albumz/dzxycmacdhewxcvavfal.jpg",
     "password": "$2a$12$u7T//yZHdelvUBm9/Sl/cul3nlV1Y2dyFlut/7tOBt6IsbWFTCssu",
     "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
