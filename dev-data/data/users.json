@@ -51,7 +51,7 @@
     "favArtists": ["Lil Wayne", "Rick Ross", "J Cole"],
     "role": "user",
     "active": true,
-    "avatar": "",
+    "avatar": "http://res.cloudinary.com/learnhowtocode/image/upload/v1667929828/albumz/gpjuyozizhxto3bonnpd.jpg",
     "password": "$2a$12$hP1h2pnNp7wgyZNRwPsOTeZuNzWBv7vHmsR3DT/OaPSUBQT.y0S..",
     "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
