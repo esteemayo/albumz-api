@@ -219,7 +219,7 @@
     "favArtists": ["Adele", "Sam Smith", "2 Baba", "Fireboy DML", "Joe Boy"],
     "role": "user",
     "active": true,
-    "avatar": "",
+    "avatar": "http://res.cloudinary.com/learnhowtocode/image/upload/v1667930873/albumz/csxtxozuwiww6hx7xtde.jpg",
     "password": "$2a$12$VPYaAAOsI44uhq11WbZ5R.cHT4.fGdlI9gKJd95jmYw3.sAsmbvBq",
     "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
