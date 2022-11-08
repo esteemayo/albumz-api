@@ -247,7 +247,7 @@
     "favArtists": ["Laycon", "Burna Boy", "Bob Marley"],
     "role": "user",
     "active": true,
-    "avatar": "",
+    "avatar": "http://res.cloudinary.com/learnhowtocode/image/upload/v1667930972/albumz/slwivwpbhdefqjhohnmc.jpg",
     "password": "$2a$12$IUnwPH0MGFeMuz7g4gtfvOll.9wgLyxG.9C3TKlttfLtCQWEE6GIu",
     "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
