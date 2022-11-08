@@ -275,7 +275,7 @@
     "favArtists": ["Bob Marley", "Patoranking", "Timaya", "Olamide"],
     "role": "user",
     "active": true,
-    "avatar": "",
+    "avatar": "http://res.cloudinary.com/learnhowtocode/image/upload/v1667931111/albumz/bfghjahk2wtearuksfox.jpg",
     "password": "$2a$12$uB5H1OxLMOqDYTuTlptAoewlovENJvjrLwzsL1wUZ6OkAIByPPBGq",
     "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
