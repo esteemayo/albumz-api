@@ -331,7 +331,7 @@
     ],
     "role": "user",
     "active": true,
-    "avatar": "",
+    "avatar": "http://res.cloudinary.com/learnhowtocode/image/upload/v1667931324/albumz/cbqr1mrnqost0bhushw6.jpg",
     "password": "$2a$12$47zKK6yJuJP3Cw1bzGrKSuRheBL6hvYFfCG4ORb5X9Lqfeghk1ThC",
     "createdAt": "2021-01-22T13:17:03.866+00:00"
   },
