@@ -27,7 +27,7 @@ exports.getReviews = asyncHandler(async (req, res, next) => {
 });
 
 exports.getTopReviews = asyncHandler(async (req, res, next) => {
-  const reviews = await Review.find({ rating: { $gte: 4.5 } }).sort('-_id').limit(3);
+  const reviews = await Review.find({ rating: { $gte: 4.5 } }).limit(3);
   // const reviews = await Review.getTopReviews();
 
   res.status(StatusCodes.OK).json({
