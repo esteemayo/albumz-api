@@ -41,7 +41,7 @@
   },
   {
     "_id": "5fff8e68ee4cef3e94def626",
-    "review": "Nam ultrices ornare dolor nec cursus. Nullam et risus ullamcorper, molestie sapien quis, molestie purus. Suspendisse vitae nisi non metus fermentum tempor.",
+    "review": "Nam ultrices ornare dolor nec cursus. Nullam et risus ullamcorper, molestie sapien quis, molestie purus.",
     "rating": 5,
     "album": "5e13bface3d40f35b4e400f6",
     "user": "5e14aea7026b4a30786831ee",
@@ -49,7 +49,7 @@
   },
   {
     "_id": "5fff8eaa4dd52342f8fe265e",
-    "review": "Maecenas nec risus sem. Vestibulum aliquet augue vel ante aliquam, vitae tempus justo ultricies. Curabitur venenatis pellentesque ultrices. In commodo faucibus tristique.",
+    "review": "Maecenas nec risus sem. Vestibulum aliquet augue vel ante aliquam, vitae tempus justo ultricies. Curabitur venenatis pellentesque ultrices.",
     "rating": 5,
     "album": "5e1fc3f3aed41d06e052f5d7",
     "user": "5c8a211f2f8fb814b56fa188",
@@ -57,7 +57,7 @@
   },
   {
     "_id": "5fff8f124dd52342f8fe265f",
-    "review": "Donec aliquam neque eu pharetra porta. Etiam facilisis, est vitae malesuada imperdiet, mauris erat tincidunt mauris, a ornare sapien ex id lectus. Cras odio orci, congue sed sem vel, rhoncus bibendum justo.",
+    "review": "Donec aliquam neque eu pharetra porta. Etiam facilisis, est vitae malesuada imperdiet, mauris erat tincidunt mauris, a ornare sapien ex id lectus.",
     "rating": 5,
     "album": "5efe75588264925f9c7a66cc",
     "user": "5c8a211f2f8fb814b56fa188",
@@ -65,7 +65,7 @@
   },
   {
     "_id": "5fff900023b0911404dda080",
-    "review": "Sed gravida eros ac imperdiet pellentesque. Donec elementum nibh vitae volutpat cursus. Vestibulum luctus lobortis velit ut convallis. Curabitur in feugiat leo.",
+    "review": "Sed gravida eros ac imperdiet pellentesque. Donec elementum nibh vitae volutpat cursus. Vestibulum luctus lobortis velit ut convallis.",
     "rating": 5,
     "album": "5e14b3df300b3c4350e55e15",
     "user": "5efe00c91a85815814599f66",
@@ -169,7 +169,7 @@
   },
   {
     "_id": "5fff962fc385811a4cdc03a3",
-    "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper faucibus orci non tincidunt. Duis lacinia efficitur elit, ut vehicula orci pellentesque vel.",
+    "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper faucibus orci non tincidunt. Duis lacinia efficitur elit.",
     "rating": 4,
     "album": "5ffcce602883c422e80d9d07",
     "user": "5c8a1f4e2f8fb814b56fa185",
@@ -209,7 +209,7 @@
   },
   {
     "_id": "5fff981250ecdb4468b6bba7",
-    "review": "Nulla facilisi. Integer metus purus, viverra eget nibh nec, ultricies posuere ex. Mauris ultrices libero vel lacinia dictum. Ut imperdiet tortor ante, id porttitor quam ultricies placerat.",
+    "review": "Nulla facilisi. Integer metus purus, viverra eget nibh nec, ultricies posuere ex. Mauris ultrices libero vel lacinia dictum.",
     "rating": 4,
     "album": "5e1fcf5fe3bf523af868f5bf",
     "user": "5c8a21d02f8fb814b56fa189",
@@ -233,7 +233,7 @@
   },
   {
     "_id": "5fff99264c4dfb3f542740cf",
-    "review": "Sed semper ante quis felis rutrum condimentum. Vivamus condimentum, neque vel auctor malesuada, eros libero tempus elit, quis egestas augue augue nec felis.",
+    "review": "Sed semper ante quis felis rutrum condimentum. Vivamus condimentum, neque vel auctor malesuada, eros libero tempus elit.",
     "rating": 5,
     "album": "5ffccc9f2883c422e80d9d05",
     "user": "5c8a21f22f8fb814b56fa18a",
@@ -249,7 +249,7 @@
   },
   {
     "_id": "5fff99af2e7e1756ecbd9761",
-    "review": "Cras rutrum quis magna nec ullamcorper, fusce a ultricies tellus. Nam viverra, lorem ut fringilla gravida, metus erat mollis lorem, lobortis vestibulum nisi orci id lacus.",
+    "review": "Cras rutrum quis magna nec ullamcorper, fusce a ultricies tellus. Nam viverra, lorem ut fringilla gravida, metus erat mollis lorem.",
     "rating": 5,
     "album": "5e1fcf5fe3bf523af868f5bf",
     "user": "5c8a22c62f8fb814b56fa18b",
@@ -257,7 +257,7 @@
   },
   {
     "_id": "5fff9a2eb1fabd135cd90f58",
-    "review": "Curabitur at urna ornare, placerat sem in, mollis mi. Fusce suscipit et neque vitae egestas. Nullam est justo, viverra auctor nisl quis, volutpat laoreet sem.",
+    "review": "Curabitur at urna ornare, placerat sem in, mollis mi. Fusce suscipit et neque vitae egestas. Nullam est justo, viverra auctor nisl quis.",
     "rating": 5,
     "album": "5ffccc9f2883c422e80d9d05",
     "user": "5c8a23412f8fb814b56fa18c",
@@ -273,7 +273,7 @@
   },
   {
     "_id": "5fff9b1d7e939e418cc06d82",
-    "review": "Ut non tristique augue, vel sagittis turpis. Vestibulum libero ligula, tempus quis ultricies id, iaculis eu nulla. Morbi nibh leo, lobortis eget quam a, mattis tincidunt elit. ",
+    "review": "Ut non tristique augue, vel sagittis turpis. Vestibulum libero ligula, tempus quis ultricies id, iaculis eu nulla.",
     "rating": 5,
     "album": "5e1fc68039bed63f48eb15e6",
     "user": "5c8a23c82f8fb814b56fa18d",
@@ -297,7 +297,7 @@
   },
   {
     "_id": "5fff9bfd4bc9cc4df418186b",
-    "review": "Nunc id sodales mi. Duis mattis nibh vel nisl viverra, ut interdum odio rhoncus. Fusce vulputate, felis sed volutpat hendrerit, odio ligula condimentum dolor, id congue sem orci a ante.",
+    "review": "Nunc id sodales mi. Duis mattis nibh vel nisl viverra, ut interdum odio rhoncus. Fusce vulputate, felis sed volutpat hendrerit, odio ligula condimentum dolor.",
     "rating": 5,
     "album": "5ffcd1e22883c422e80d9d0d",
     "user": "5c8a23de2f8fb814b56fa18e",
@@ -401,7 +401,7 @@
   },
   {
     "_id": "5fffa0c22c704e30e032fdba",
-    "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam blandit egestas dui. Ut finibus leo non augue bibendum cursus. Nam ex sapien, condimentum tincidunt turpis nec, fringilla posuere ante.",
+    "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam blandit egestas dui. Ut finibus leo non augue bibendum cursus.",
     "rating": 5,
     "album": "5ffccfdb2883c422e80d9d09",
     "user": "5e14b003e93a124218ad0e58",
@@ -409,7 +409,7 @@
   },
   {
     "_id": "5fffa0df2c704e30e032fdbb",
-    "review": "Proin eget erat diam. Duis congue nisi massa, eget convallis erat gravida ac. In leo turpis, fringilla et turpis facilisis, eleifend pretium est. Etiam sodales aliquam dictum.",
+    "review": "Proin eget erat diam. Duis congue nisi massa, eget convallis erat gravida ac. In leo turpis, fringilla et turpis facilisis, eleifend pretium est.",
     "rating": 5,
     "album": "5ffcdbd114f7d821585d81da",
     "user": "5e14b003e93a124218ad0e58",
@@ -417,7 +417,7 @@
   },
   {
     "_id": "5fffa183f07b190ee85db205",
-    "review": "Quisque ligula nisl, mollis ac lacinia vitae, consequat nec sapien. Cras a felis et nulla malesuada consequat ac id libero. Nulla gravida id urna vel viverra. Cras a aliquam augue, eleifend auctor mauris.",
+    "review": "Quisque ligula nisl, mollis ac lacinia vitae, consequat nec sapien. Cras a felis et nulla malesuada consequat ac id libero. Nulla gravida id urna vel viverra.",
     "rating": 5,
     "album": "5ffccf2e2883c422e80d9d08",
     "user": "5ffe3a574c8e754cb43516c3",
@@ -433,7 +433,7 @@
   },
   {
     "_id": "5fffa27c47b72a4568cda54c",
-    "review": "Etiam massa orci, volutpat venenatis convallis vitae, elementum quis nibh. Ut ullamcorper mauris tincidunt faucibus ornare. Vestibulum purus nunc, molestie ut sodales in, varius et purus.",
+    "review": "Etiam massa orci, volutpat venenatis convallis vitae, elementum quis nibh. Ut ullamcorper mauris tincidunt faucibus ornare.",
     "rating": 5,
     "album": "5ffcd0bb2883c422e80d9d0a",
     "user": "5eb306dd73cf483374ddbe3f",
@@ -441,7 +441,7 @@
   },
   {
     "_id": "5fffa2f94d821b5594600b81",
-    "review": "Nulla gravida id urna vel viverra. Cras a aliquam augue, eleifend auctor mauris. Nulla dapibus libero eget lectus ornare, eget varius tellus lobortis. Sed sollicitudin nisi et felis sollicitudin euismod. Aenean libero turpis, egestas sit amet sagittis non, rutrum ac nisl.",
+    "review": "Nulla gravida id urna vel viverra. Cras a aliquam augue, eleifend auctor mauris. Nulla dapibus libero eget lectus ornare, eget varius tellus lobortis. Sed sollicitudin nisi et felis sollicitudin euismod.",
     "rating": 4,
     "album": "5ffcd96814f7d821585d81d7",
     "user": "5c8a1dfa2f8fb814b56fa181",
