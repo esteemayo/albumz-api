@@ -1,7 +1,7 @@
 {
   "name": "albumz-api",
   "version": "1.0.0",
-  "description": "Music album manager",
+  "description": "An application that manages your music collection",
   "main": "app.js",
   "scripts": {
     "start": "node server.js",
