@@ -12,7 +12,7 @@ dotenv.config({ path: './config.env' });
 const app = require('./app');
 const connectDB = require('./config/db');
 
-// MongoDB connction
+// MongoDB connection
 connectDB();
 
 app.set('port', process.env.PORT || 9797);
