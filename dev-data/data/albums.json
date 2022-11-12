@@ -355,5 +355,26 @@
     "featured": false,
     "user": "5e14b003e93a124218ad0e58",
     "createdAt": "2021-01-22T13:17:03.866+00:00"
+  },
+  {
+    "_id": "636ff0820f39326cf63a737d",
+    "artist": "Burna Boy",
+    "title": "Love Damini",
+    "genre": "Afro Fusion",
+    "info": "Love Damini is the sixth studio album by Nigerian singer Burna Boy. It was released on 8 July 2022 through Atlantic Records.\n\nThe album features guest appearances from Ladysmith Black Mambazo, J Hus, Vict0ny, Popcaan, Blxst, Kehlani, Ed Sheeran, J Balvin, and Khalid. It was supported by two singles, \"Kilometre\" and \"Last Last\".\n\nThe album is named after Burna Boy's legal first name and serves as the follow-up to his previous album, Twice as Tall (2020)",
+    "year": "2022",
+    "label": "Atlantic",
+    "tracks": 19,
+    "ratingsAverage": 4.5,
+    "ratingsQuantity": 0,
+    "tags": ["afrobeats", "afro", "music"],
+    "image": "http://res.cloudinary.com/learnhowtocode/image/upload/v1668280457/albumz/zyl5umypayhyleo0zvnc.jpg",
+    "featured": false,
+    "user": "5c8a1d5b0190b214360dc057",
+    "likes": [],
+    "createdAt": "2022-11-12T19:14:10.650Z",
+    "updatedAt": "2022-11-12T19:14:10.650Z",
+    "slug": "love-damini",
+    "__v": 0
   }
 ]
