@@ -426,7 +426,7 @@
     "ratingsQuantity": 0,
     "tags": ["afrobeats", "newmusic", "nigerian r&b"],
     "image": "http://res.cloudinary.com/learnhowtocode/image/upload/v1668281634/albumz/ltkna5yypkh46d69zosy.jpg",
-    "featured": false,
+    "featured": true,
     "user": "5c8a1d5b0190b214360dc057",
     "likes": [],
     "createdAt": "2022-11-12T19:33:47.988Z"
