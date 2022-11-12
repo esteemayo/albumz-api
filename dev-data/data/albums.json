@@ -397,5 +397,26 @@
     "updatedAt": "2022-11-12T19:24:35.396Z",
     "slug": "playboy",
     "__v": 0
+  },
+  {
+    "_id": "636ff51b0f39326cf63a7393",
+    "artist": "Wizkid",
+    "title": "More Love Less Ego",
+    "genre": "Afro Fusion",
+    "info": "Afrobeats superstar singer, Ayodeji Ibrahim Balogun “Wizkid” has delighted his fans with the release of the highly anticipated 5th studio album ‘More Love, Less Ego’ (Listen here).\n\nThe 13-track album sees the Afrobeats maestro infusing a blend of Afropop, Amapiano and R&B vibes to create a feel-good rhythm and celebrate love over money.\n\nThe album includes features by Ayra Starr, Skillibeng, Sheen sea, Naira Marley, Skepta, and Don Toliver.\n\nSpeaking on the album, 32-year-old Wizkid said, “I feel we need more love in our communities. We need to just be good to one another and appreciate life more. So, this album title and even the music is just my own way of making people feel good.”",
+    "year": "2022",
+    "label": "RCA Records",
+    "tracks": 13,
+    "ratingsAverage": 4.5,
+    "ratingsQuantity": 0,
+    "tags": ["afrobeats", "newmusic", "nigerian r&b"],
+    "image": "http://res.cloudinary.com/learnhowtocode/image/upload/v1668281634/albumz/ltkna5yypkh46d69zosy.jpg",
+    "featured": false,
+    "user": "5c8a1d5b0190b214360dc057",
+    "likes": [],
+    "createdAt": "2022-11-12T19:33:47.988Z",
+    "updatedAt": "2022-11-12T19:33:47.988Z",
+    "slug": "more-love-less-ego",
+    "__v": 0
   }
 ]
