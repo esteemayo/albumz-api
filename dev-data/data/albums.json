@@ -408,7 +408,7 @@
     "ratingsQuantity": 0,
     "tags": ["nigerian r&b", "afropop", "afrobeats"],
     "image": "http://res.cloudinary.com/learnhowtocode/image/upload/v1668281081/albumz/ikhb3ukpogqzuea2ru6c.jpg",
-    "featured": false,
+    "featured": true,
     "user": "5c8a1d5b0190b214360dc057",
     "likes": [],
     "createdAt": "2022-11-12T19:24:35.396Z"
