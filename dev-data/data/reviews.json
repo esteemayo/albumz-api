@@ -552,5 +552,15 @@
     "createdAt": "2022-11-12T21:17:15.114Z",
     "updatedAt": "2022-11-12T21:17:15.114Z",
     "__v": 0
+  },
+  {
+    "_id": "63700d9d2119275e8c1e4aa0",
+    "review": "Curabitur id quam aliquam, venenatis odio non, pharetra arcu. Cras luctus leo eu lectus hendrerit.",
+    "rating": 5,
+    "album": "636ff2f30f39326cf63a7387",
+    "user": "5c8a24a02f8fb814b56fa193",
+    "createdAt": "2022-11-12T21:18:21.778Z",
+    "updatedAt": "2022-11-12T21:18:21.778Z",
+    "__v": 0
   }
 ]
