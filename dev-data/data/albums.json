@@ -390,7 +390,7 @@
     "ratingsQuantity": 0,
     "tags": ["afrobeats", "afro", "music"],
     "image": "http://res.cloudinary.com/learnhowtocode/image/upload/v1668280457/albumz/zyl5umypayhyleo0zvnc.jpg",
-    "featured": false,
+    "featured": true,
     "user": "5c8a1d5b0190b214360dc057",
     "likes": [],
     "createdAt": "2022-11-12T19:14:10.650Z"
