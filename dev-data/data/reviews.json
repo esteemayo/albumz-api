@@ -170,7 +170,7 @@
   {
     "_id": "5fff962fc385811a4cdc03a3",
     "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper faucibus orci non tincidunt. Duis lacinia efficitur elit.",
-    "rating": 4,
+    "rating": 5,
     "album": "5ffcce602883c422e80d9d07",
     "user": "5c8a1f4e2f8fb814b56fa185",
     "createdAt": "2021-01-22T13:17:03.866+00:00"
