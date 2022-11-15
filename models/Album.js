@@ -190,7 +190,10 @@ albumSchema.statics.getTopAlbums = async function () {
       },
     },
     {
-      $match: { 'reviews.1': { $exists: true } },
+      $match: {
+        'reviews.1': { $exists: true },
+        ratingsAverage: { $gte: 4.5 },
+      },
     },
     {
       $project: {
@@ -201,6 +204,9 @@ albumSchema.statics.getTopAlbums = async function () {
         artist: '$artist',
         avgRating: { $avg: '$reviews.rating' },
       },
+    },
+    {
+      $sample: { size: 10 },
     },
     {
       $sort: { avgRating: -1 },
