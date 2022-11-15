@@ -56,14 +56,14 @@ exports.googleLogin = asyncHandler(async (req, res, next) => {
 
 exports.restrictTo =
   (...roles) =>
-  (req, res, next) => {
-    if (!roles.includes(req.user.role)) {
-      return next(
-        new ForbiddenError('You do not have permission to perform this action')
-      );
-    }
-    next();
-  };
+    (req, res, next) => {
+      if (!roles.includes(req.user.role)) {
+        return next(
+          new ForbiddenError('You do not have permission to perform this action')
+        );
+      }
+      next();
+    };
 
 exports.forgotPassword = asyncHandler(async (req, res, next) => {
   const { email } = req.body;
@@ -82,9 +82,11 @@ exports.forgotPassword = asyncHandler(async (req, res, next) => {
   const resetToken = user.createPasswordResetToken();
   await user.save({ validateBeforeSave: false });
 
-  const resetURL = `${req.protocol}://${req.get(
-    'host'
-  )}/api/v1/auth/reset-token/${resetToken}`;
+  const resetURL = `http://localhost:3000/auth/reset/${resetToken}`;
+
+  // const resetURL = `${req.protocol}://${req.get(
+  //   'host'
+  // )}/api/v1/auth/reset-token/${resetToken}`;
 
   const message = `
     Hi ${user.name},
