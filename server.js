@@ -9,17 +9,16 @@ process.on('uncaughtException', (err) => {
 });
 
 dotenv.config({ path: './config.env' });
+
 const app = require('./app');
 const connectDB = require('./config/db');
 
-// MongoDB connection
-connectDB();
-
 app.set('port', process.env.PORT || 9797);
 
-const server = app.listen(app.get('port'), () =>
+const server = app.listen(app.get('port'), async () => {
+  await connectDB();
   console.log(`Server listening at port → ${server.address().port}`.cyan.bold)
-);
+});
 
 process.on('SIGTERM', () => {
   console.log('👏 SIGTERM RECEIVED, Shutting down gracefully');
