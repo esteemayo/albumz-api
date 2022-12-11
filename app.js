@@ -1,17 +1,24 @@
-const express = require('express');
-const morgan = require('morgan');
-const cookieParser = require('cookie-parser');
-const cors = require('cors');
-const helmet = require('helmet');
-const rateLimit = require('express-rate-limit');
-const mongoSanitize = require('express-mongo-sanitize');
-const xss = require('xss-clean');
-const hpp = require('hpp');
-const compression = require('compression');
+import express from 'express';
+import morgan from 'morgan';
+import cookieParser from 'cookie-parser';
+import cors from 'cors';
+import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
+import mongoSanitize from 'express-mongo-sanitize';
+import xss from 'xss-clean';
+import hpp from 'hpp';
+import compression from 'compression';
 
 // requiring routes
-const NotFoundError = require('./errors/notFound');
-const globalErrorHandler = require('./middlewares/errorHandler');
+import albumRoute from './routes/albums.js';
+import userRoute from './routes/users.js';
+import authRoute from './routes/auth.js';
+import genreRoute from './routes/genres.js';
+import reviewRoute from './routes/reviews.js';
+import bookmarkRoute from './routes/bookmarks.js';
+import historyRoute from './routes/histories.js';
+import NotFoundError from './errors/notFound.js';
+import globalErrorHandler from './middlewares/errorHandler.js';
 
 // start express app
 const app = express();
@@ -68,13 +75,13 @@ app.use((req, res, next) => {
 });
 
 // api routes middleware
-app.use('/api/v1/albums', require('./routes/albums'));
-app.use('/api/v1/users', require('./routes/users'));
-app.use('/api/v1/auth', require('./routes/auth'));
-app.use('/api/v1/genres', require('./routes/genre'));
-app.use('/api/v1/reviews', require('./routes/reviews'));
-app.use('/api/v1/bookmarks', require('./routes/bookmarks'));
-app.use('/api/v1/histories', require('./routes/history'));
+app.use('/api/v1/albums', albumRoute);
+app.use('/api/v1/users', userRoute);
+app.use('/api/v1/auth', authRoute);
+app.use('/api/v1/genres', genreRoute);
+app.use('/api/v1/reviews', reviewRoute);
+app.use('/api/v1/bookmarks', bookmarkRoute);
+app.use('/api/v1/histories', historyRoute);
 
 app.all('*', (req, res, next) => {
   next(new NotFoundError(`Can't find ${req.originalUrl} on this server`));
@@ -82,4 +89,4 @@ app.all('*', (req, res, next) => {
 
 app.use(globalErrorHandler);
 
-module.exports = app;
+export default app;
