@@ -2,7 +2,6 @@ import express from 'express';
 
 import reviewRouter from './reviews.js';
 import authMiddleware from '../middlewares/authMiddleware.js';
-import * as authController from '../controllers/authController.js';
 import * as albumController from '../controllers/albumController.js';
 
 const router = express.Router();
@@ -14,7 +13,7 @@ router.get('/search', albumController.searchAlbum);
 router.get(
   '/stats',
   authMiddleware.protect,
-  authController.restrictTo('admin'),
+  authMiddleware.restrictTo('admin'),
   albumController.getAlbumStats
 );
 
