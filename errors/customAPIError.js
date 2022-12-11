@@ -1,4 +1,4 @@
-const { StatusCodes } = require('http-status-codes');
+import { StatusCodes } from 'http-status-codes';
 
 class CustomAPIError extends Error {
   constructor(message) {
@@ -9,4 +9,4 @@ class CustomAPIError extends Error {
   }
 }
 
-module.exports = CustomAPIError;
+export default CustomAPIError;
