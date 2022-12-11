@@ -1,16 +1,16 @@
-const _ = require('lodash');
-const { StatusCodes } = require('http-status-codes');
-const asyncHandler = require('express-async-handler');
+import _ from 'lodash';
+import { StatusCodes } from 'http-status-codes';
+import asyncHandler from 'express-async-handler';
 
-const User = require('../models/User');
-const Album = require('../models/Album');
-const Genre = require('../models/Genre');
-const Bookmark = require('../models/Bookmark');
-const createSendToken = require('../utils/createSendToken');
-const NotFoundError = require('../errors/notFound');
-const BadRequestError = require('../errors/badRequest');
+import User from '../models/User.js';
+import Album from '../models/Album.js';
+import Genre from '../models/Genre.js';
+import Bookmark from '../models/Bookmark.js';
+import createSendToken from '../utils/createSendToken.js';
+import NotFoundError from '../errors/notFound.js';
+import BadRequestError from '../errors/badRequest.js';
 
-exports.register = asyncHandler(async (req, res, next) => {
+export const register = asyncHandler(async (req, res, next) => {
   const newUser = _.pick(req.body, [
     'id',
     'name',
@@ -33,7 +33,7 @@ exports.register = asyncHandler(async (req, res, next) => {
   }
 });
 
-exports.getUsers = asyncHandler(async (req, res, next) => {
+export const getUsers = asyncHandler(async (req, res, next) => {
   const query = req.query.new;
 
   const users = query
@@ -48,7 +48,7 @@ exports.getUsers = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.getUserStats = asyncHandler(async (req, res, next) => {
+export const getUserStats = asyncHandler(async (req, res, next) => {
   const stats = await User.getUserStats();
 
   res.status(StatusCodes.OK).json({
@@ -57,7 +57,7 @@ exports.getUserStats = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.getUser = asyncHandler(async (req, res, next) => {
+export const getUser = asyncHandler(async (req, res, next) => {
   const { id: userId } = req.params;
 
   const user = await User.findById(userId);
@@ -74,7 +74,7 @@ exports.getUser = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.updateUser = asyncHandler(async (req, res, next) => {
+export const updateUser = asyncHandler(async (req, res, next) => {
   const { id: userId } = req.params;
 
   const user = await User.findById(userId);
@@ -100,7 +100,7 @@ exports.updateUser = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.updateMe = asyncHandler(async (req, res, next) => {
+export const updateMe = asyncHandler(async (req, res, next) => {
   const { password, confirmPassword } = req.body;
 
   if (password || confirmPassword) {
@@ -134,7 +134,7 @@ exports.updateMe = asyncHandler(async (req, res, next) => {
   createSendToken(updatedUser, StatusCodes.OK, req, res);
 });
 
-exports.deleteUser = asyncHandler(async (req, res, next) => {
+export const deleteUser = asyncHandler(async (req, res, next) => {
   const { id: userId } = req.params;
 
   const user = await User.findById(userId);
@@ -153,7 +153,7 @@ exports.deleteUser = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.deleteMe = asyncHandler(async (req, res, next) => {
+export const deleteMe = asyncHandler(async (req, res, next) => {
   const { _id: userId } = req.user;
 
   const user = await User.findByIdAndUpdate(userId, { active: false });
@@ -168,12 +168,12 @@ exports.deleteMe = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.getMe = (req, res, next) => {
+export const getMe = (req, res, next) => {
   req.params.id = req.user._id;
   next();
 };
 
-exports.createUser = (req, res) => {
+export const createUser = (req, res) => {
   res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
     status: 'fail',
     message: `This route is not defined! Please use ${req.protocol}://${req.get(
