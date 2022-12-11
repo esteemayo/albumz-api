@@ -1,9 +1,9 @@
-const express = require('express');
+import express from 'express';
 
-const reviewRouter = require('./reviews');
-const authController = require('../controllers/authController');
-const authMiddleware = require('../middlewares/authMiddleware');
-const albumController = require('../controllers/albumController');
+import reviewRouter from './reviews.js';
+import authController from '../controllers/authController.js';
+import authMiddleware from '../middlewares/authMiddleware.js';
+import albumController from '../controllers/albumController.js';
 
 const router = express.Router();
 
@@ -57,4 +57,4 @@ router
   .patch(albumController.updateAlbum)
   .delete(albumController.deleteAlbum);
 
-module.exports = router;
+export default router;
