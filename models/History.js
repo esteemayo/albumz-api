@@ -1,4 +1,4 @@
-const mongoose from 'mongoose';
+import mongoose from 'mongoose';
 
 const historySchema = new mongoose.Schema(
   {
