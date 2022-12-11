@@ -3,7 +3,6 @@ import { StatusCodes } from 'http-status-codes';
 import asyncHandler from 'express-async-handler';
 
 import User from '../models/User.js';
-import ForbiddenError from '../errors/forbidden.js';
 import createSendToken from '../utils/createSendToken.js';
 import sendEmail from '../utils/email.js';
 import BadRequestError from '../errors/badRequest.js';
@@ -53,17 +52,6 @@ export const googleLogin = asyncHandler(async (req, res, next) => {
     user,
   });
 });
-
-export const restrictTo =
-  (...roles) =>
-    (req, res, next) => {
-      if (!roles.includes(req.user.role)) {
-        return next(
-          new ForbiddenError('You do not have permission to perform this action')
-        );
-      }
-      next();
-    };
 
 export const forgotPassword = asyncHandler(async (req, res, next) => {
   const { email } = req.body;
