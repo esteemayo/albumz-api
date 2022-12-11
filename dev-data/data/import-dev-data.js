@@ -1,18 +1,18 @@
 /* eslint-disable */
-const fs = require('fs');
-const dotenv = require('dotenv');
-require('colors');
+import fs from 'fs';
+import dotenv from 'dotenv';
+import 'colors';
 
 // models
-const Album = require('../../models/Album');
-const Genre = require('../../models/Genre');
-const Review = require('../../models/Review');
-const User = require('../../models/User');
-const History = require('../../models/History');
-const Bookmark = require('../../models/Bookmark');
+import Album from '../../models/Album.js';
+import Genre from '../../models/Genre.js';
+import Review from '../../models/Review.js';
+import User from '../../models/User.js';
+import History from '../../models/History.js';
+import Bookmark from '../../models/Bookmark.js';
+import connectDB from '../../config/db.js';
 
 dotenv.config({ path: './config.env' });
-const connectDB = require('../../config/db');
 
 // database connection
 connectDB();
