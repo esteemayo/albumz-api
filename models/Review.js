@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Album = require('./Album');
+import mongoose from 'mongoose';
+import Album from './Album.js';
 
 const reviewSchema = new mongoose.Schema(
   {
@@ -98,4 +98,4 @@ reviewSchema.statics.getTopReviews = function () {
 
 const Review = mongoose.models.Review || mongoose.model('Review', reviewSchema);
 
-module.exports = Review;
+export default Review;
