@@ -1,5 +1,5 @@
-const slugify = require('slugify');
-const mongoose = require('mongoose');
+import slugify from 'slugify';
+import mongoose from 'mongoose';
 
 const genreSchema = new mongoose.Schema(
   {
@@ -38,4 +38,4 @@ genreSchema.pre(/^find/, function (next) {
 
 const Genre = mongoose.models.Genre || mongoose.model('Genre', genreSchema);
 
-module.exports = Genre;
+export default Genre;
