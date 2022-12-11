@@ -1,10 +1,10 @@
-const { StatusCodes } = require('http-status-codes');
-const asyncHandler = require('express-async-handler');
+import { StatusCodes } from 'http-status-codes';
+import asyncHandler from 'express-async-handler';
 
-const APIFeatures = require('../utils/apiFeatures');
-const NotFoundError = require('../errors/notFound');
+import APIFeatures from '../utils/apiFeatures.js';
+import NotFoundError from '../errors/notFound.js';
 
-exports.getAll = (Model) =>
+const getAll = (Model) =>
   asyncHandler(async (req, res, next) => {
     let filter = {};
     if (req.params.albumId) filter = { album: req.params.albumId };
@@ -25,7 +25,7 @@ exports.getAll = (Model) =>
     });
   });
 
-exports.getOneById = (Model, popOptions) =>
+const getOneById = (Model, popOptions) =>
   asyncHandler(async (req, res, next) => {
     const { id: docId } = req.params;
 
@@ -46,7 +46,7 @@ exports.getOneById = (Model, popOptions) =>
     });
   });
 
-exports.getOneBySlug = (Model, popOptions) =>
+const getOneBySlug = (Model, popOptions) =>
   asyncHandler(async (req, res, next) => {
     const { slug } = req.params;
 
@@ -67,7 +67,7 @@ exports.getOneBySlug = (Model, popOptions) =>
     });
   });
 
-exports.createOne = (Model) =>
+const createOne = (Model) =>
   asyncHandler(async (req, res, next) => {
     const doc = await Model.create({ ...req.body });
 
@@ -79,7 +79,7 @@ exports.createOne = (Model) =>
     }
   });
 
-exports.updateOne = (Model) =>
+const updateOne = (Model) =>
   asyncHandler(async (req, res, next) => {
     const { id: docId } = req.params;
 
@@ -106,7 +106,7 @@ exports.updateOne = (Model) =>
     });
   });
 
-exports.deleteOne = (Model) =>
+const deleteOne = (Model) =>
   asyncHandler(async (req, res, next) => {
     const { id: docId } = req.params;
 
@@ -125,3 +125,14 @@ exports.deleteOne = (Model) =>
       doc: null,
     });
   });
+
+const factory = {
+  getAll,
+  getOneById,
+  getOneBySlug,
+  createOne,
+  updateOne,
+  deleteOne,
+};
+
+export default factory;
