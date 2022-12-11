@@ -1,12 +1,12 @@
-const { StatusCodes } = require('http-status-codes');
-const asyncHandler = require('express-async-handler');
+import { StatusCodes } from 'http-status-codes';
+import asyncHandler from 'express-async-handler';
 
-const Review = require('../models/Review');
-const APIFeatures = require('../utils/apiFeatures');
-const ForbiddenError = require('../errors/forbidden');
-const NotFoundError = require('../errors/notFound');
+import Review from '../models/Review.js';
+import APIFeatures from '../utils/apiFeatures.js';
+import ForbiddenError from '../errors/forbidden.js';
+import NotFoundError from '../errors/notFound.js';
 
-exports.getReviews = asyncHandler(async (req, res, next) => {
+export const getReviews = asyncHandler(async (req, res, next) => {
   let filter = {};
   if (req.params.albumId) filter = { album: req.params.albumId };
 
@@ -26,7 +26,7 @@ exports.getReviews = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.getTopReviews = asyncHandler(async (req, res, next) => {
+export const getTopReviews = asyncHandler(async (req, res, next) => {
   const reviews = await Review.find({ rating: { $gte: 4.5 } }).limit(3);
   // const reviews = await Review.getTopReviews();
 
@@ -36,7 +36,7 @@ exports.getTopReviews = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.getReview = asyncHandler(async (req, res, next) => {
+export const getReview = asyncHandler(async (req, res, next) => {
   const { id: reviewId } = req.params;
 
   const review = await Review.findById(reviewId);
@@ -53,7 +53,7 @@ exports.getReview = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.createReview = asyncHandler(async (req, res, next) => {
+export const createReview = asyncHandler(async (req, res, next) => {
   if (!req.body.user) req.body.user = req.user._id;
   if (!req.body.album) req.body.album = req.params.albumId;
 
@@ -67,7 +67,7 @@ exports.createReview = asyncHandler(async (req, res, next) => {
   }
 });
 
-exports.updateReview = asyncHandler(async (req, res, next) => {
+export const updateReview = asyncHandler(async (req, res, next) => {
   const { id: reviewId } = req.params;
 
   const review = await Review.findById(reviewId);
@@ -102,7 +102,7 @@ exports.updateReview = asyncHandler(async (req, res, next) => {
   );
 });
 
-exports.deleteReview = asyncHandler(async (req, res, next) => {
+export const deleteReview = asyncHandler(async (req, res, next) => {
   const { id: reviewId } = req.params;
 
   const review = await Review.findById(reviewId);
