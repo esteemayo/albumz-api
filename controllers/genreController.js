@@ -1,13 +1,13 @@
-const slugify = require('slugify');
-const { StatusCodes } = require('http-status-codes');
-const asyncHandler = require('express-async-handler');
+import slugify from 'slugify';
+import { StatusCodes } from 'http-status-codes';
+import asyncHandler from 'express-async-handler';
 
-const Genre = require('../models/Genre');
-const APIFeatures = require('../utils/apiFeatures');
-const NotFoundError = require('../errors/notFound');
-const ForbiddenError = require('../errors/forbidden');
+import Genre from '../models/Genre.js';
+import APIFeatures from '../utils/apiFeatures.js';
+import NotFoundError from '../errors/notFound.js';
+import ForbiddenError from '../errors/forbidden.js';
 
-exports.getGenres = asyncHandler(async (req, res, next) => {
+export const getGenres = asyncHandler(async (req, res, next) => {
   const { _id: userId } = req.user._id;
 
   const features = new APIFeatures(Genre.find({ user: userId }), req.query)
@@ -26,7 +26,7 @@ exports.getGenres = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.getAllGenres = asyncHandler(async (req, res, next) => {
+export const getAllGenres = asyncHandler(async (req, res, next) => {
   const features = new APIFeatures(Genre.find(), req.query)
     .filter()
     .sort()
@@ -43,7 +43,7 @@ exports.getAllGenres = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.getGenreById = asyncHandler(async (req, res, next) => {
+export const getGenreById = asyncHandler(async (req, res, next) => {
   const { id: genreId } = req.params;
 
   const genre = await Genre.findById(genreId);
@@ -69,7 +69,7 @@ exports.getGenreById = asyncHandler(async (req, res, next) => {
   );
 });
 
-exports.getGenreBySlug = asyncHandler(async (req, res, next) => {
+export const getGenreBySlug = asyncHandler(async (req, res, next) => {
   const { slug } = req.params;
 
   const genre = await Genre.findOne({ slug });
@@ -95,7 +95,7 @@ exports.getGenreBySlug = asyncHandler(async (req, res, next) => {
   );
 });
 
-exports.createGenre = asyncHandler(async (req, res, next) => {
+export const createGenre = asyncHandler(async (req, res, next) => {
   if (!req.body.user) req.body.user = req.user._id;
 
   const genre = await Genre.create({ ...req.body });
@@ -108,7 +108,7 @@ exports.createGenre = asyncHandler(async (req, res, next) => {
   }
 });
 
-exports.updateGenre = asyncHandler(async (req, res, next) => {
+export const updateGenre = asyncHandler(async (req, res, next) => {
   const { id: genreId } = req.params;
 
   const genre = await Genre.findById(genreId);
@@ -145,7 +145,7 @@ exports.updateGenre = asyncHandler(async (req, res, next) => {
   );
 });
 
-exports.deleteGenre = asyncHandler(async (req, res, next) => {
+export const deleteGenre = asyncHandler(async (req, res, next) => {
   const { id: genreId } = req.params;
 
   const genre = await Genre.findById(genreId);
