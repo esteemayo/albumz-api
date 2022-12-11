@@ -1,18 +1,17 @@
 import express from 'express';
 
-import authmiddleware from '../middlewares/authMiddleware.js';
-import * as authController from '../controllers/authController.js';
+import authMiddleware from '../middlewares/authMiddleware.js';
 import * as bookmarkController from '../controllers/bookmarkController.js';
 
 const router = express.Router();
 
-router.use(authmiddleware.protect);
+router.use(authMiddleware.protect);
 
 router.get('/album/:albumId', bookmarkController.getOneBookmark);
 
 router.get(
   '/admin',
-  authController.restrictTo('admin'),
+  authMiddleware.restrictTo('admin'),
   bookmarkController.getAdminBookmarks
 );
 
