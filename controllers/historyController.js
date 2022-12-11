@@ -1,13 +1,13 @@
-const _ = require('lodash');
-const { StatusCodes } = require('http-status-codes');
-const asyncHandler = require('express-async-handler');
+import _ from 'lodash';
+import { StatusCodes } from 'http-status-codes';
+import asyncHandler from 'express-async-handler';
 
-const History = require('../models/History');
-const APIFeatures = require('../utils/apiFeatures');
-const NotFoundError = require('../errors/notFound');
-const ForbiddenError = require('../errors/forbidden');
+import History from '../models/History.js';
+import APIFeatures from '../utils/apiFeatures.js';
+import NotFoundError from '../errors/notFound.js';
+import ForbiddenError from '../errors/forbidden.js';
 
-exports.getHistories = asyncHandler(async (req, res, next) => {
+export const getHistories = asyncHandler(async (req, res, next) => {
   const features = new APIFeatures(
     History.find({ user: req.user._id }),
     req.query
@@ -28,7 +28,7 @@ exports.getHistories = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.getAdminHistories = asyncHandler(async (req, res, next) => {
+export const getAdminHistories = asyncHandler(async (req, res, next) => {
   const features = new APIFeatures(History.find(), req.query)
     .filter()
     .sort()
@@ -45,7 +45,7 @@ exports.getAdminHistories = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.getHistory = asyncHandler(async (req, res, next) => {
+export const getHistory = asyncHandler(async (req, res, next) => {
   const { id: historyId } = req.params;
 
   const history = await History.findById(historyId);
@@ -64,7 +64,7 @@ exports.getHistory = asyncHandler(async (req, res, next) => {
   }
 });
 
-exports.getHistoriesOnAlbum = asyncHandler(async (req, res, next) => {
+export const getHistoriesOnAlbum = asyncHandler(async (req, res, next) => {
   const { id: albumId } = req.params;
 
   const histories = await History.find({ album: albumId });
@@ -77,7 +77,7 @@ exports.getHistoriesOnAlbum = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.createHistory = asyncHandler(async (req, res, next) => {
+export const createHistory = asyncHandler(async (req, res, next) => {
   if (!req.body.user) req.body.user = req.user._id;
 
   const history = await History.create({ ...req.body });
@@ -90,7 +90,7 @@ exports.createHistory = asyncHandler(async (req, res, next) => {
   }
 });
 
-exports.updateHistory = asyncHandler(async (req, res, next) => {
+export const updateHistory = asyncHandler(async (req, res, next) => {
   const { id: historyId } = req.params;
 
   const history = await History.findById(historyId);
@@ -122,7 +122,7 @@ exports.updateHistory = asyncHandler(async (req, res, next) => {
   );
 });
 
-exports.deleteHistory = asyncHandler(async (req, res, next) => {
+export const deleteHistory = asyncHandler(async (req, res, next) => {
   const { id: historyId } = req.params;
 
   const history = await History.findById(historyId);
