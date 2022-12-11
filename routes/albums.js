@@ -1,9 +1,9 @@
 import express from 'express';
 
 import reviewRouter from './reviews.js';
-import authController from '../controllers/authController.js';
 import authMiddleware from '../middlewares/authMiddleware.js';
-import albumController from '../controllers/albumController.js';
+import * as authController from '../controllers/authController.js';
+import * as albumController from '../controllers/albumController.js';
 
 const router = express.Router();
 
