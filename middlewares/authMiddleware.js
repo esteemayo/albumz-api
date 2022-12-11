@@ -1,11 +1,11 @@
-const jwt = require('jsonwebtoken');
-const { promisify } = require('util');
-const asyncHandler = require('express-async-handler');
+import jwt from 'jsonwebtoken';
+import { promisify } from 'util';
+import asyncHandler from 'express-async-handler';
 
-const User = require('../models/User');
-const UnauthenticatedError = require('../errors/unauthenticated');
+import User from '../models/User.js';
+import UnauthenticatedError from '../errors/unauthenticated.js';
 
-exports.protect = asyncHandler(async (req, res, next) => {
+const protect = asyncHandler(async (req, res, next) => {
   let token;
   const authHeader = req.headers.authorization;
 
@@ -53,3 +53,7 @@ exports.protect = asyncHandler(async (req, res, next) => {
 
   next();
 });
+
+const authMiddleware = { protect };
+
+export default authMiddleware;
