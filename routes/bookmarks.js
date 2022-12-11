@@ -1,8 +1,8 @@
 import express from 'express';
 
-import authController from '../controllers/authController.js';
 import authmiddleware from '../middlewares/authMiddleware.js';
-import bookmarkController from '../controllers/bookmarkController.js';
+import * as authController from '../controllers/authController.js';
+import * as bookmarkController from '../controllers/bookmarkController.js';
 
 const router = express.Router();
 
