@@ -3,6 +3,7 @@ import { promisify } from 'util';
 import asyncHandler from 'express-async-handler';
 
 import User from '../models/User.js';
+import ForbiddenError from '../errors/forbidden.js';
 import UnauthenticatedError from '../errors/unauthenticated.js';
 
 const protect = asyncHandler(async (req, res, next) => {
