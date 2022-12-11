@@ -1,8 +1,8 @@
-const express = require('express');
+import express from 'express';
 
-const authController = require('../controllers/authController');
-const authMiddleware = require('../middlewares/authMiddleware');
-const historyController = require('../controllers/historyController');
+import authController from '../controllers/authController.js';
+import authMiddleware from '../middlewares/authMiddleware.js';
+import historyController from '../controllers/historyController.js';
 
 const router = express.Router();
 
@@ -29,4 +29,4 @@ router
   .patch(historyController.updateHistory)
   .delete(historyController.deleteHistory);
 
-module.exports = router;
+export default router;
