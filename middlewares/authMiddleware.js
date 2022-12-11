@@ -55,6 +55,28 @@ const protect = asyncHandler(async (req, res, next) => {
   next();
 });
 
-const authMiddleware = { protect };
+const restrictTo =
+  (...roles) =>
+    (req, res, next) => {
+      if (!roles.includes(req.user.role)) {
+        return next(
+          new ForbiddenError('You do not have permission to perform this action')
+        );
+      }
+      next();
+    };
+
+const verifyUser = (req, res, next) => {
+  if (req.user.id === req.params.id || req.user.role === 'admin') {
+    return next();
+  }
+  return next(new ForbiddenError('You are not authorized'));
+};
+
+const authMiddleware = {
+  protect,
+  restrictTo,
+  verifyUser,
+};
 
 export default authMiddleware;
