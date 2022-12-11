@@ -1,7 +1,6 @@
 import express from 'express';
 
 import authMiddleware from '../middlewares/authMiddleware.js';
-import * as authController from '../controllers/authController.js';
 import * as historyController from '../controllers/historyController.js';
 
 const router = express.Router();
@@ -10,7 +9,7 @@ router.use(authMiddleware.protect);
 
 router.get(
   '/admin',
-  authController.restrictTo('admin'),
+  authMiddleware.restrictTo('admin'),
   historyController.getAdminHistories
 );
 
@@ -21,7 +20,7 @@ router
   .get(historyController.getHistories)
   .post(historyController.createHistory);
 
-router.use(authController.restrictTo('admin'));
+router.use(authMiddleware.restrictTo('admin'));
 
 router
   .route('/:id')
