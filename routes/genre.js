@@ -1,7 +1,7 @@
-const express = require('express');
+import express from 'express';
 
-const authMiddleware = require('../middlewares/authMiddleware');
-const genreController = require('../controllers/genreController');
+import authMiddleware from '../middlewares/authMiddleware.js';
+import genreController from '../controllers/genreController.js';
 
 const router = express.Router();
 
@@ -22,4 +22,4 @@ router
   .patch(genreController.updateGenre)
   .delete(genreController.deleteGenre);
 
-module.exports = router;
+export default router;
