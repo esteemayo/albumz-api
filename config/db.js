@@ -1,7 +1,7 @@
 /* eslint-disable */
-const dotenv = require('dotenv');
-const mongoose = require('mongoose');
-require('colors');
+import dotenv from 'dotenv';
+import mongoose from 'mongoose';
+import 'colors';
 
 dotenv.config({ path: './config.env' });
 
@@ -27,4 +27,4 @@ mongoose.connection.on('disconnected', () => {
   console.log('MongoDB disconnected'.red.bold);
 });
 
-module.exports = connectDB;
+export default connectDB;
