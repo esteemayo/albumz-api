@@ -1,6 +1,6 @@
 /* eslint-disable */
-const dotenv = require('dotenv');
-require('colors');
+import dotenv from 'dotenv';
+import 'colors';
 
 process.on('uncaughtException', (err) => {
   console.log('UNCAUGHT EXCEPTION! 🔥 Shutting down...'.bgRed.bold);
