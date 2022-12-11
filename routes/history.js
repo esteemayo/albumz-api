@@ -1,8 +1,8 @@
 import express from 'express';
 
-import authController from '../controllers/authController.js';
 import authMiddleware from '../middlewares/authMiddleware.js';
-import historyController from '../controllers/historyController.js';
+import * as authController from '../controllers/authController.js';
+import * as historyController from '../controllers/historyController.js';
 
 const router = express.Router();
 
