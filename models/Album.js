@@ -1,5 +1,5 @@
-const slugify = require('slugify');
-const mongoose = require('mongoose');
+import slugify from 'slugify';
+import mongoose from 'mongoose';
 
 const albumSchema = new mongoose.Schema(
   {
@@ -219,4 +219,4 @@ albumSchema.statics.getTopAlbums = async function () {
 
 const Album = mongoose.models.Album || mongoose.model('Album', albumSchema);
 
-module.exports = Album;
+export default Album;
