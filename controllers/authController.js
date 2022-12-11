@@ -1,17 +1,17 @@
-const crypto = require('crypto');
-const { StatusCodes } = require('http-status-codes');
-const asyncHandler = require('express-async-handler');
+import crypto from 'crypto';
+import { StatusCodes } from 'http-status-codes';
+import asyncHandler from 'express-async-handler';
 
-const User = require('../models/User');
-const ForbiddenError = require('../errors/forbidden');
-const createSendToken = require('../utils/createSendToken');
-const sendEmail = require('../utils/email');
-const BadRequestError = require('../errors/badRequest');
-const UnauthenticatedError = require('../errors/unauthenticated');
-const NotFoundError = require('../errors/notFound');
-const CustomAPIError = require('../errors/customAPIError');
+import User from '../models/User.js';
+import ForbiddenError from '../errors/forbidden.js';
+import createSendToken from '../utils/createSendToken.js';
+import sendEmail from '../utils/email.js';
+import BadRequestError from '../errors/badRequest.js';
+import UnauthenticatedError from '../errors/unauthenticated.js';
+import NotFoundError from '../errors/notFound.js';
+import CustomAPIError from '../errors/customAPIError.js';
 
-exports.login = asyncHandler(async (req, res, next) => {
+export const login = asyncHandler(async (req, res, next) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
@@ -26,7 +26,7 @@ exports.login = asyncHandler(async (req, res, next) => {
   createSendToken(user, StatusCodes.OK, req, res);
 });
 
-exports.googleLogin = asyncHandler(async (req, res, next) => {
+export const googleLogin = asyncHandler(async (req, res, next) => {
   const { name, email, username, googleId, token } = req.body;
 
   let user = await User.findOne({ email });
@@ -54,7 +54,7 @@ exports.googleLogin = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.restrictTo =
+export const restrictTo =
   (...roles) =>
     (req, res, next) => {
       if (!roles.includes(req.user.role)) {
@@ -65,7 +65,7 @@ exports.restrictTo =
       next();
     };
 
-exports.forgotPassword = asyncHandler(async (req, res, next) => {
+export const forgotPassword = asyncHandler(async (req, res, next) => {
   const { email } = req.body;
 
   if (!email) {
@@ -131,7 +131,7 @@ exports.forgotPassword = asyncHandler(async (req, res, next) => {
   }
 });
 
-exports.resetPassword = asyncHandler(async (req, res, next) => {
+export const resetPassword = asyncHandler(async (req, res, next) => {
   const { password, confirmPassword } = req.body;
 
   const hashedToken = crypto
@@ -157,7 +157,7 @@ exports.resetPassword = asyncHandler(async (req, res, next) => {
   createSendToken(user, StatusCodes.OK, req, res);
 });
 
-exports.updatePassword = asyncHandler(async (req, res, next) => {
+export const updatePassword = asyncHandler(async (req, res, next) => {
   const { password, confirmPassword, currentPassword } = req.body;
 
   const user = await User.findById(req.user._id);
