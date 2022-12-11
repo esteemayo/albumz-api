@@ -28,7 +28,7 @@ router
 
 router
   .route('/:id')
-  .get(userController.getUser)
+  .get(authMiddleware.verifyUser, userController.getUser)
   .patch(authMiddleware.restrictTo('admin'), userController.updateUser)
   .delete(authMiddleware.restrictTo('admin'), userController.deleteUser);
 
