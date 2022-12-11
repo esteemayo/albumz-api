@@ -1,7 +1,7 @@
 import express from 'express';
 
 import authMiddleware from '../middlewares/authMiddleware.js';
-import genreController from '../controllers/genreController.js';
+import * as genreController from '../controllers/genreController.js';
 
 const router = express.Router();
 
