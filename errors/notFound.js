@@ -1,5 +1,5 @@
-const { StatusCodes } = require('http-status-codes');
-const CustomAPIError = require('./customAPIError');
+import { StatusCodes } from 'http-status-codes';
+import CustomAPIError from './ customAPIError.js';
 
 class NotFoundError extends CustomAPIError {
   constructor(message) {
@@ -10,4 +10,4 @@ class NotFoundError extends CustomAPIError {
   }
 }
 
-module.exports = NotFoundError;
+export default NotFoundError;
