@@ -1,13 +1,13 @@
-const { StatusCodes } = require('http-status-codes');
-const asyncHandler = require('express-async-handler');
+import { StatusCodes } from 'http-status-codes';
+import asyncHandler from 'express-async-handler';
 
-const Bookmark = require('../models/Bookmark');
-const APIFeatures = require('../utils/apiFeatures');
-const BadRequestError = require('../errors/badRequest');
-const NotFoundError = require('../errors/notFound');
-const ForbiddenError = require('../errors/forbidden');
+import Bookmark from '../models/Bookmark.js';
+import APIFeatures from '../utils/apiFeatures.js';
+import BadRequestError from '../errors/badRequest.js';
+import NotFoundError from '../errors/notFound.js';
+import ForbiddenError from '../errors/forbidden.js';
 
-exports.getBookmarks = asyncHandler(async (req, res, next) => {
+export const getBookmarks = asyncHandler(async (req, res, next) => {
   const features = new APIFeatures(
     Bookmark.find({ user: req.user._id }),
     req.query
@@ -27,7 +27,7 @@ exports.getBookmarks = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.getAdminBookmarks = asyncHandler(async (req, res, next) => {
+export const getAdminBookmarks = asyncHandler(async (req, res, next) => {
   const features = new APIFeatures(Bookmark.find(), req.query)
     .filter()
     .sort()
@@ -44,7 +44,7 @@ exports.getAdminBookmarks = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.getBookmark = asyncHandler(async (req, res, next) => {
+export const getBookmark = asyncHandler(async (req, res, next) => {
   const {
     user: { _id: userId },
     params: { id: bookmarkId },
@@ -72,7 +72,7 @@ exports.getBookmark = asyncHandler(async (req, res, next) => {
   );
 });
 
-exports.getOneBookmark = asyncHandler(async (req, res, next) => {
+export const getOneBookmark = asyncHandler(async (req, res, next) => {
   const {
     user: { _id: userId },
     params: { albumId },
@@ -97,7 +97,7 @@ exports.getOneBookmark = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.createBookmark = asyncHandler(async (req, res, next) => {
+export const createBookmark = asyncHandler(async (req, res, next) => {
   const {
     body: { album },
     user: { _id: userId },
@@ -122,7 +122,7 @@ exports.createBookmark = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.updateBookmark = asyncHandler(async (req, res, next) => {
+export const updateBookmark = asyncHandler(async (req, res, next) => {
   const { id: bookmarkId } = req.params;
 
   const bookmark = await Bookmark.findById(bookmarkId);
@@ -159,7 +159,7 @@ exports.updateBookmark = asyncHandler(async (req, res, next) => {
   );
 });
 
-exports.deleteBookmark = asyncHandler(async (req, res, next) => {
+export const deleteBookmark = asyncHandler(async (req, res, next) => {
   const { id: bookmarkId } = req.params;
 
   const bookmark = await Bookmark.findById(bookmarkId);
