@@ -1,4 +1,4 @@
-const { StatusCodes } = require('http-status-codes');
+import { StatusCodes } from 'http-status-codes';
 
 const handleCastErrorDB = (customError, err) => {
   customError.message = `Invalid ${err.path}: ${err.value}`;
@@ -62,4 +62,4 @@ const globalErrorHandler = (err, req, res, next) => {
   }
 };
 
-module.exports = globalErrorHandler;
+export default globalErrorHandler;
