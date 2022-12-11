@@ -1,8 +1,8 @@
-const express = require('express');
+import express from 'express';
 
-const authController = require('../controllers/authController');
-const authMiddleware = require('../middlewares/authMiddleware');
-const reviewController = require('../controllers/reviewController');
+import authController from '../controllers/authController.js';
+import authMiddleware from '../middlewares/authMiddleware.js';
+import reviewController from '../controllers/reviewController.js';
 
 const router = express.Router({ mergeParams: true });
 
@@ -21,4 +21,4 @@ router
   .patch(reviewController.updateReview)
   .delete(reviewController.deleteReview);
 
-module.exports = router;
+export default router;
