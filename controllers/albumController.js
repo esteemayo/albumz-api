@@ -1,13 +1,13 @@
-const slugify = require('slugify');
-const { StatusCodes } = require('http-status-codes');
-const asyncHandler = require('express-async-handler');
+import slugify from 'slugify';
+import { StatusCodes } from 'http-status-codes';
+import asyncHandler from 'express-async-handler';
 
-const Album = require('../models/Album');
-const APIFeatures = require('../utils/apiFeatures');
-const ForbiddenError = require('../errors/forbidden');
-const NotFoundError = require('../errors/notFound');
+import Album from '../models/Album.js';
+import APIFeatures from '../utils/apiFeatures.js';
+import ForbiddenError from '../errors/forbidden.js';
+import NotFoundError from '../errors/notFound.js';
 
-exports.getAllAlbums = asyncHandler(async (req, res, next) => {
+export const getAllAlbums = asyncHandler(async (req, res, next) => {
   // filtering
   const queryObj = { ...req.query };
   const excludedFields = ['page', 'sort', 'limit', 'fields'];
@@ -59,7 +59,7 @@ exports.getAllAlbums = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.getUserAlbums = asyncHandler(async (req, res, next) => {
+export const getUserAlbums = asyncHandler(async (req, res, next) => {
   const { _id: userId } = req.user;
 
   const features = new APIFeatures(Album.find({ user: userId }), req.query)
@@ -78,7 +78,7 @@ exports.getUserAlbums = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.getFeaturedAlbums = asyncHandler(async (req, res, next) => {
+export const getFeaturedAlbums = asyncHandler(async (req, res, next) => {
   const albums = await Album.getFeaturedAlbums();
 
   res.status(StatusCodes.OK).json({
@@ -88,7 +88,7 @@ exports.getFeaturedAlbums = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.getAlbumStats = asyncHandler(async (req, res, next) => {
+export const getAlbumStats = asyncHandler(async (req, res, next) => {
   const stats = await Album.getAlbumStats();
 
   res.status(StatusCodes.OK).json({
@@ -98,7 +98,7 @@ exports.getAlbumStats = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.getTopAlbums = asyncHandler(async (req, res, next) => {
+export const getTopAlbums = asyncHandler(async (req, res, next) => {
   const albums = await Album.getTopAlbums();
 
   res.status(StatusCodes.OK).json({
@@ -108,7 +108,7 @@ exports.getTopAlbums = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.getAlbumsByTag = asyncHandler(async (req, res, next) => {
+export const getAlbumsByTag = asyncHandler(async (req, res, next) => {
   const { tag } = req.params;
   const tagQuery = tag || { $exists: true };
 
@@ -124,7 +124,7 @@ exports.getAlbumsByTag = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.getRelatedAlbums = asyncHandler(async (req, res, next) => {
+export const getRelatedAlbums = asyncHandler(async (req, res, next) => {
   const tags = req.body;
 
   const albums = await Album.find({ tags: { $in: tags } });
@@ -135,7 +135,7 @@ exports.getRelatedAlbums = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.searchAlbum = asyncHandler(async (req, res, next) => {
+export const searchAlbum = asyncHandler(async (req, res, next) => {
   const albums = await Album.find(
     {
       $text: {
@@ -162,7 +162,7 @@ exports.searchAlbum = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.getAlbumById = asyncHandler(async (req, res, next) => {
+export const getAlbumById = asyncHandler(async (req, res, next) => {
   const { id: albumId } = req.params;
 
   const album = await Album.findById(albumId).populate({ path: 'reviews' });
@@ -188,7 +188,7 @@ exports.getAlbumById = asyncHandler(async (req, res, next) => {
   );
 });
 
-exports.getAlbumBySlug = asyncHandler(async (req, res, next) => {
+export const getAlbumBySlug = asyncHandler(async (req, res, next) => {
   const { slug } = req.params;
 
   const album = await Album.findOne({ slug }).populate({ path: 'reviews' });
@@ -205,7 +205,7 @@ exports.getAlbumBySlug = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.createAlbum = asyncHandler(async (req, res, next) => {
+export const createAlbum = asyncHandler(async (req, res, next) => {
   if (!req.body.user) req.body.user = req.user._id;
 
   const album = await Album.create({ ...req.body });
@@ -218,7 +218,7 @@ exports.createAlbum = asyncHandler(async (req, res, next) => {
   }
 });
 
-exports.updateAlbum = asyncHandler(async (req, res, next) => {
+export const updateAlbum = asyncHandler(async (req, res, next) => {
   const { id: albumId } = req.params;
 
   const album = await Album.findById(albumId);
@@ -255,7 +255,7 @@ exports.updateAlbum = asyncHandler(async (req, res, next) => {
   );
 });
 
-exports.likeAlbum = asyncHandler(async (req, res, next) => {
+export const likeAlbum = asyncHandler(async (req, res, next) => {
   const { id: albumId } = req.params;
 
   const album = await Album.findById(albumId);
@@ -289,7 +289,7 @@ exports.likeAlbum = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.deleteAlbum = asyncHandler(async (req, res, next) => {
+export const deleteAlbum = asyncHandler(async (req, res, next) => {
   const { id: albumId } = req.params;
 
   const album = await Album.findById(albumId);
