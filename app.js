@@ -8,6 +8,7 @@ import mongoSanitize from 'express-mongo-sanitize';
 import xss from 'xss-clean';
 import hpp from 'hpp';
 import compression from 'compression';
+import dotenv from 'dotenv';
 
 // requiring routes
 import albumRoute from './routes/albums.js';
@@ -19,6 +20,8 @@ import bookmarkRoute from './routes/bookmarks.js'
 import historyRoute from './routes/history.js';
 import NotFoundError from './errors/notFound.js';
 import globalErrorHandler from './middlewares/errorHandler.js';
+
+dotenv.config({ path: './config.env' });
 
 // start express app
 const app = express();
