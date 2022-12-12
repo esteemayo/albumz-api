@@ -14,7 +14,7 @@ app.set('port', process.env.PORT || 9797);
 
 const server = app.listen(app.get('port'), async () => {
   await connectDB();
-  console.log(`Server listening at port → ${server.address().port}`.cyan.bold)
+  console.log(`Server listening at port → ${server.address().port}`.cyan.bold);
 });
 
 process.on('SIGTERM', () => {
