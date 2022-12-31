@@ -1,6 +1,8 @@
 /* eslint-disable */
 import fs from 'fs';
+import path from 'path';
 import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
 import 'colors';
 
 // models
@@ -12,6 +14,8 @@ import History from '../../models/History.js';
 import Bookmark from '../../models/Bookmark.js';
 import connectDB from '../../config/db.js';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 dotenv.config({ path: './config.env' });
 
 // database connection
