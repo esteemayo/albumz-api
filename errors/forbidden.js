@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { StatusCodes } from 'http-status-codes';
 import CustomAPIError from './customAPIError.js';
 
