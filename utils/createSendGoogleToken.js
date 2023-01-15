@@ -5,6 +5,7 @@ const createSendGoogleToken = (user, token, status, req, res) => {
     ),
     httpOnly: true,
     sameSite: true,
+    path: '/',
     secure: req.secure || req.headers['x-forwarded-proto'] === 'https',
   });
 
