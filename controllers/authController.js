@@ -46,7 +46,11 @@ export const googleLogin = asyncHandler(async (req, res, next) => {
     });
   }
 
-  user = await User.create({ ...req.body });
+  user = await User.create({
+    ...req.body,
+    fromGoogle: true,
+  });
+
   return res.status(StatusCodes.OK).json({
     status: 'success',
     token,
