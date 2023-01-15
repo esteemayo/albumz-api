@@ -66,12 +66,9 @@ const userSchema = new mongoose.Schema(
     favArtists: {
       type: [String],
     },
-    googleId: {
-      type: String,
-      required: false,
-    },
-    id: {
-      type: String,
+    fromGoogle: {
+      type: Boolean,
+      default: false,
     },
     avatar: {
       type: String,
