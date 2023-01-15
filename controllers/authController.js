@@ -40,11 +40,7 @@ export const googleLogin = asyncHandler(async (req, res, next) => {
       googleId,
     };
 
-    return res.status(StatusCodes.OK).json({
-      status: 'success',
-      token,
-      user,
-    });
+    return createSendGoogleToken(user, token, StatusCodes.OK, req, res);
   }
 
   user = await User.create({
@@ -52,11 +48,7 @@ export const googleLogin = asyncHandler(async (req, res, next) => {
     fromGoogle: true,
   });
 
-  return res.status(StatusCodes.OK).json({
-    status: 'success',
-    token,
-    user,
-  });
+  return createSendGoogleToken(user, token, StatusCodes.OK, req, res);
 });
 
 export const forgotPassword = asyncHandler(async (req, res, next) => {
