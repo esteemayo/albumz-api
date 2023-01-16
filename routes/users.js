@@ -53,6 +53,10 @@ router
     authMiddleware.restrictTo('admin'),
     userController.updateUser
   )
-  .delete(authMiddleware.restrictTo('admin'), userController.deleteUser);
+  .delete(
+    authMiddleware.protect,
+    authMiddleware.restrictTo('admin'),
+    userController.deleteUser,
+  );
 
 export default router;
