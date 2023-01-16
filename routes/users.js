@@ -48,7 +48,11 @@ router
 router
   .route('/:id')
   .get(userController.getUser)
-  .patch(authMiddleware.restrictTo('admin'), userController.updateUser)
+  .patch(
+    authMiddleware.protect,
+    authMiddleware.restrictTo('admin'),
+    userController.updateUser
+  )
   .delete(authMiddleware.restrictTo('admin'), userController.deleteUser);
 
 export default router;
