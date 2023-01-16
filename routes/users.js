@@ -17,7 +17,12 @@ router.get(
   userController.getUserStats
 );
 
-router.get('/me', userController.getMe, userController.getUser);
+router.get(
+  '/me',
+  authMiddleware.protect,
+  userController.getMe,
+  userController.getUser,
+);
 
 router.patch('/update-me', userController.updateMe);
 
