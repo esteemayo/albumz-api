@@ -30,7 +30,11 @@ router.patch(
   userController.updateMe,
 );
 
-router.delete('/delete-me', userController.deleteMe);
+router.delete(
+  '/delete-me',
+  authMiddleware.protect,
+  userController.deleteMe,
+);
 
 router
   .route('/')
