@@ -14,7 +14,7 @@ router.get(
   '/stats',
   authMiddleware.protect,
   authMiddleware.restrictTo('admin'),
-  userController.getUserStats
+  userController.getUserStats,
 );
 
 router.get(
@@ -24,7 +24,11 @@ router.get(
   userController.getUser,
 );
 
-router.patch('/update-me', userController.updateMe);
+router.patch(
+  '/update-me',
+  authMiddleware.protect,
+  userController.updateMe,
+);
 
 router.delete('/delete-me', userController.deleteMe);
 
