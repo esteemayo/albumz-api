@@ -38,7 +38,11 @@ router.delete(
 
 router
   .route('/')
-  .get(authMiddleware.restrictTo('admin'), userController.getUsers)
+  .get(
+    authMiddleware.protect,
+    authMiddleware.restrictTo('admin'),
+    userController.getUsers,
+  )
   .post(userController.createUser);
 
 router
