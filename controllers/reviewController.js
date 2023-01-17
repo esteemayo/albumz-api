@@ -72,6 +72,7 @@ export const updateReview = asyncHandler(async (req, res, next) => {
   const { id: reviewId } = req.params;
 
   const review = await Review.findById(reviewId);
+  const album = await Album.findById(review.album);
 
   if (!review) {
     return next(
@@ -81,6 +82,7 @@ export const updateReview = asyncHandler(async (req, res, next) => {
 
   if (
     String(review.user._id) === String(req.user._id) ||
+    String(album.user._id) === String(req.user._id) ||
     req.user.role === 'admin'
   ) {
     const updatedReview = await Review.findByIdAndUpdate(
