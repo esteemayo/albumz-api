@@ -119,6 +119,7 @@ export const deleteReview = asyncHandler(async (req, res, next) => {
 
   if (
     String(review.user._id) === String(req.user._id) ||
+    String(album.user._id) === String(req.user._id) ||
     req.user.role === 'admin'
   ) {
     await review.remove();
