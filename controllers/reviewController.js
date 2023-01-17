@@ -109,6 +109,7 @@ export const deleteReview = asyncHandler(async (req, res, next) => {
   const { id: reviewId } = req.params;
 
   const review = await Review.findById(reviewId);
+  const album = await Album.findById(review.album);
 
   if (!review) {
     return next(
