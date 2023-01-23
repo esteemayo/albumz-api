@@ -28,7 +28,7 @@ export const login = asyncHandler(async (req, res, next) => {
 });
 
 export const googleLogin = asyncHandler(async (req, res, next) => {
-  const { name, email, username, googleId, token } = req.body;
+  const { name, email, username, googleId } = req.body;
 
   let user = await User.findOne({ email });
   if (user) {
@@ -40,7 +40,7 @@ export const googleLogin = asyncHandler(async (req, res, next) => {
       googleId,
     };
 
-    return createSendGoogleToken(user, token, StatusCodes.OK, req, res);
+    return createSendGoogleToken(user, StatusCodes.OK, req, res);
   }
 
   user = await User.create({
@@ -48,7 +48,7 @@ export const googleLogin = asyncHandler(async (req, res, next) => {
     fromGoogle: true,
   });
 
-  return createSendGoogleToken(user, token, StatusCodes.OK, req, res);
+  return createSendGoogleToken(user, StatusCodes.OK, req, res);
 });
 
 export const forgotPassword = asyncHandler(async (req, res, next) => {
