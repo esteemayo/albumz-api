@@ -14,7 +14,7 @@ const createSendGoogleToken = (user, status, req, res) => {
   res.status(status).json({
     status: 'success',
     token,
-    user,
+    ...user,
   });
 };
 
