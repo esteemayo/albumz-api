@@ -32,14 +32,6 @@ export const googleLogin = asyncHandler(async (req, res, next) => {
 
   let user = await User.findOne({ email });
   if (user) {
-    user = {
-      _id: user._id.toString(),
-      name,
-      email,
-      username,
-      googleId,
-    };
-
     return createSendGoogleToken(user, StatusCodes.OK, req, res);
   }
 
@@ -48,7 +40,7 @@ export const googleLogin = asyncHandler(async (req, res, next) => {
     fromGoogle: true,
   });
 
-  return createSendGoogleToken(user, StatusCodes.OK, req, res);
+  createSendGoogleToken(user, StatusCodes.OK, req, res);
 });
 
 export const forgotPassword = asyncHandler(async (req, res, next) => {
