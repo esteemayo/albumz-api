@@ -17,8 +17,6 @@ const protect = asyncHandler(async (req, res, next) => {
     token = req.cookies.token;
   }
 
-  const isCustomAuth = token && token.length < 500;
-
   if (!token) {
     return next(
       new UnauthenticatedError(
@@ -27,33 +25,26 @@ const protect = asyncHandler(async (req, res, next) => {
     );
   }
 
-  if (token && isCustomAuth) {
-    const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+  const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
 
-    const currentUser = await User.findById(decoded.id).select('-password');
-    if (!currentUser) {
-      return next(
-        new UnauthenticatedError(
-          'The user belonging to this token does no longer exist'
-        )
-      );
-    }
-
-    if (currentUser.changedPasswordAfter(decoded.iat)) {
-      return next(
-        new UnauthenticatedError(
-          'User recently changed password! Please log in again'
-        )
-      );
-    }
-
-    req.user = currentUser;
-  } else {
-    const decodedData = jwt.decode(token);
-    const googleId = decodedData.sub && decodedData.sub.toString();
-    const user = await User.findOne({ googleId });
-    req.user = user;
+  const currentUser = await User.findById(decoded.id).select('-password');
+  if (!currentUser) {
+    return next(
+      new UnauthenticatedError(
+        'The user belonging to this token does no longer exist'
+      )
+    );
   }
+
+  if (currentUser.changedPasswordAfter(decoded.iat)) {
+    return next(
+      new UnauthenticatedError(
+        'User recently changed password! Please log in again'
+      )
+    );
+  }
+
+  req.user = currentUser;
 
   next();
 });
