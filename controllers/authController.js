@@ -31,6 +31,7 @@ export const googleLogin = asyncHandler(async (req, res, next) => {
   const { email } = req.body;
 
   let user = await User.findOne({ email });
+
   if (user) {
     return createSendGoogleToken(user, StatusCodes.OK, req, res);
   }
