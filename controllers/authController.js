@@ -28,7 +28,7 @@ export const login = asyncHandler(async (req, res, next) => {
 });
 
 export const googleLogin = asyncHandler(async (req, res, next) => {
-  const { name, email, username, googleId } = req.body;
+  const { email } = req.body;
 
   let user = await User.findOne({ email });
   if (user) {
