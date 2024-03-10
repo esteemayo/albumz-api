@@ -1,16 +1,18 @@
 /* eslint-disable */
-import crypto from 'crypto';
 import { StatusCodes } from 'http-status-codes';
+import crypto from 'crypto';
 import asyncHandler from 'express-async-handler';
 
-import User from '../models/User.js';
 import createSendToken from '../utils/createSendToken.js';
 import sendEmail from '../utils/email.js';
-import BadRequestError from '../errors/badRequest.js';
-import UnauthenticatedError from '../errors/unauthenticated.js';
+import createSendGoogleToken from '../utils/createSendGoogleToken.js';
+
 import NotFoundError from '../errors/notFound.js';
 import CustomAPIError from '../errors/customAPIError.js';
-import createSendGoogleToken from '../utils/createSendGoogleToken.js';
+import BadRequestError from '../errors/badRequest.js';
+import UnauthenticatedError from '../errors/unauthenticated.js';
+
+import User from '../models/User.js';
 
 export const login = asyncHandler(async (req, res, next) => {
   const { email, password } = req.body;

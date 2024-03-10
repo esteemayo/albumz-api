@@ -1,10 +1,11 @@
 /* eslint-disable */
-import slugify from 'slugify';
 import { StatusCodes } from 'http-status-codes';
+import slugify from 'slugify';
 import asyncHandler from 'express-async-handler';
 
 import Genre from '../models/Genre.js';
 import APIFeatures from '../utils/apiFeatures.js';
+
 import NotFoundError from '../errors/notFound.js';
 import ForbiddenError from '../errors/forbidden.js';
 

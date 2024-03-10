@@ -1,12 +1,13 @@
 /* eslint-disable */
-import slugify from 'slugify';
 import { StatusCodes } from 'http-status-codes';
+import slugify from 'slugify';
 import asyncHandler from 'express-async-handler';
 
 import Album from '../models/Album.js';
 import APIFeatures from '../utils/apiFeatures.js';
-import ForbiddenError from '../errors/forbidden.js';
+
 import NotFoundError from '../errors/notFound.js';
+import ForbiddenError from '../errors/forbidden.js';
 
 export const getAllAlbums = asyncHandler(async (req, res, next) => {
   // filtering

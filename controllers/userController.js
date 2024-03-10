@@ -1,15 +1,17 @@
 /* eslint-disable */
-import _ from 'lodash';
 import { StatusCodes } from 'http-status-codes';
+import _ from 'lodash';
 import asyncHandler from 'express-async-handler';
 
-import User from '../models/User.js';
 import Album from '../models/Album.js';
-import Genre from '../models/Genre.js';
+import User from '../models/User.js';
 import Bookmark from '../models/Bookmark.js';
-import createSendToken from '../utils/createSendToken.js';
+import Genre from '../models/Genre.js';
+
 import NotFoundError from '../errors/notFound.js';
 import BadRequestError from '../errors/badRequest.js';
+
+import createSendToken from '../utils/createSendToken.js';
 
 export const register = asyncHandler(async (req, res, next) => {
   const newUser = _.pick(req.body, [
@@ -107,7 +109,8 @@ export const updateMe = asyncHandler(async (req, res, next) => {
   if (password || confirmPassword) {
     return next(
       new BadRequestError(
-        `This route is not for password updates. Please use update ${req.protocol
+        `This route is not for password updates. Please use update ${
+          req.protocol
         }://${req.get('host')}/api/v1/auth/update-my-password`
       )
     );
