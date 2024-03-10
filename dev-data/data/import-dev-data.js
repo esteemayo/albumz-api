@@ -1,17 +1,18 @@
 /* eslint-disable */
 import fs from 'fs';
-import path from 'path';
 import dotenv from 'dotenv';
+import path from 'path';
 import { fileURLToPath } from 'url';
 import 'colors';
 
 // models
 import Album from '../../models/Album.js';
-import Genre from '../../models/Genre.js';
-import Review from '../../models/Review.js';
 import User from '../../models/User.js';
-import History from '../../models/History.js';
+import Review from '../../models/Review.js';
+import Genre from '../../models/Genre.js';
 import Bookmark from '../../models/Bookmark.js';
+import History from '../../models/History.js';
+
 import connectDB from '../../config/db.js';
 
 const __filename = fileURLToPath(import.meta.url);
