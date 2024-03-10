@@ -10,6 +10,7 @@ import xss from 'xss-clean';
 import hpp from 'hpp';
 import compression from 'compression';
 import dotenv from 'dotenv';
+import 'colors';
 
 // requiring routes
 import albumRoute from './routes/albums.js';
