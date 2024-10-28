@@ -1,4 +1,5 @@
 /* eslint-disable */
+
 import express from 'express';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
@@ -18,7 +19,7 @@ import userRoute from './routes/users.js';
 import authRoute from './routes/auth.js';
 import genreRoute from './routes/genre.js';
 import reviewRoute from './routes/reviews.js';
-import bookmarkRoute from './routes/bookmarks.js'
+import bookmarkRoute from './routes/bookmarks.js';
 import historyRoute from './routes/history.js';
 import NotFoundError from './errors/notFound.js';
 import globalErrorHandler from './middlewares/errorHandler.js';
