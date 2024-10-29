@@ -23,6 +23,7 @@ export const login = asyncHandler(async (req, res, next) => {
   }
 
   const user = await User.findOne({ email });
+
   if (!user || !(await user.comparePassword(password))) {
     return next(new UnauthenticatedError('Incorrect email or password'));
   }
@@ -55,6 +56,7 @@ export const forgotPassword = asyncHandler(async (req, res, next) => {
   }
 
   const user = await User.findOne({ email });
+
   if (!user) {
     return next(
       new NotFoundError('There is no user user with the email address')
