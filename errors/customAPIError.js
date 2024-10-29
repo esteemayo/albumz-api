@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { StatusCodes } from 'http-status-codes';
 
 class CustomAPIError extends Error {
