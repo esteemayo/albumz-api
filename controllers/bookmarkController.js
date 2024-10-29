@@ -1,13 +1,15 @@
 /* eslint-disable */
+
 import { StatusCodes } from 'http-status-codes';
 import asyncHandler from 'express-async-handler';
 
 import Bookmark from '../models/Bookmark.js';
-import APIFeatures from '../utils/apiFeatures.js';
 
-import BadRequestError from '../errors/badRequest.js';
-import NotFoundError from '../errors/notFound.js';
 import ForbiddenError from '../errors/forbidden.js';
+import NotFoundError from '../errors/notFound.js';
+import BadRequestError from '../errors/badRequest.js';
+
+import APIFeatures from '../utils/apiFeatures.js';
 
 export const getBookmarks = asyncHandler(async (req, res, next) => {
   const features = new APIFeatures(
