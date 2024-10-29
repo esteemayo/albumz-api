@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const createSendGoogleToken = (user, status, req, res) => {
   const token = user.generateToken();
 
