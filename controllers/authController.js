@@ -1,4 +1,5 @@
 /* eslint-disable */
+
 import { StatusCodes } from 'http-status-codes';
 import crypto from 'crypto';
 import asyncHandler from 'express-async-handler';
@@ -7,10 +8,10 @@ import createSendToken from '../utils/createSendToken.js';
 import sendEmail from '../utils/email.js';
 import createSendGoogleToken from '../utils/createSendGoogleToken.js';
 
-import NotFoundError from '../errors/notFound.js';
 import CustomAPIError from '../errors/customAPIError.js';
-import BadRequestError from '../errors/badRequest.js';
+import NotFoundError from '../errors/notFound.js';
 import UnauthenticatedError from '../errors/unauthenticated.js';
+import BadRequestError from '../errors/badRequest.js';
 
 import User from '../models/User.js';
 
