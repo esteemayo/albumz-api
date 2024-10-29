@@ -1,4 +1,5 @@
 /* eslint-disable */
+
 const createSendToken = (user, status, req, res) => {
   const token = user.generateToken();
 
