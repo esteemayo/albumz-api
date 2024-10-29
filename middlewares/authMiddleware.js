@@ -1,9 +1,11 @@
 /* eslint-disable */
-import jwt from 'jsonwebtoken';
+
 import { promisify } from 'util';
+import jwt from 'jsonwebtoken';
 import asyncHandler from 'express-async-handler';
 
 import User from '../models/User.js';
+
 import ForbiddenError from '../errors/forbidden.js';
 import UnauthenticatedError from '../errors/unauthenticated.js';
 
@@ -28,6 +30,7 @@ const protect = asyncHandler(async (req, res, next) => {
   const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
 
   const currentUser = await User.findById(decoded.id).select('-password');
+
   if (!currentUser) {
     return next(
       new UnauthenticatedError(
